@@ -202,6 +202,16 @@
       "poruka": "opet test",
       "datum": "2025-05-16T06:48:41.637Z",
       "id": "maqftfoh"
+    },
+    {
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "korisnik": "gost",
+      "poruka": "test",
+      "datum": "2025-05-16T09:11:42.119Z",
+      "id": "maqkxcff"
     }
   ],
   "servisneUsluge": [
