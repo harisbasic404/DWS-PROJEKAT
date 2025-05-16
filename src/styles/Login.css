@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   background: var(--background-color);
+  padding: 40px 0; /* OVO DODAJ za razmak gore i dole */
 }
 
 .login-card {
@@ -47,20 +48,29 @@
 }
 
 .password-input {
-  padding-right: 38px;
-  margin-bottom: 16px;
-  height: 40px;
+  width: 100%;
   box-sizing: border-box;
-  line-height: 40px;
-  display: block;
+  padding: 10px 44px 10px 14px; /* desni padding za dugme */
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  height: 44px;
+  background: #fafafa;
+  transition: border 0.2s;
+}
+
+.password-input:focus {
+  border: 1.5px solid var(--primary-color);
+  outline: none;
 }
 
 .show-hide-btn {
   position: absolute;
-  right: 10px;
-  top: 0;
-  bottom: 0;
-  height: 40px;
+  top: 5%;
+  right: 12px;
+  transform: translateY(-10%);
+  height: 28px;
   width: 32px;
   background: none;
   border: none;
@@ -70,11 +80,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
+  box-shadow: none;
 }
 
 .show-hide-btn svg {
+  height: 18px;
+  width: 18px;
   display: block;
   pointer-events: none;
+  transition: none;
 }
 
 .show-hide-btn:focus {
@@ -83,10 +98,8 @@
   border-radius: 50%;
 }
 
-.show-hide-btn:focus,
-.show-hide-btn:active {
-  outline: none !important;
-  box-shadow: none !important;
+.show-hide-btn:active,
+.show-hide-btn:focus {
   background: none !important;
 }
 

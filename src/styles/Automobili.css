@@ -1,12 +1,13 @@
 .automobili-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: 32px 16px 64px 16px; /* dodatni donji padding za ljepši razmak */
 }
 .automobili-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* malo šire kartice */
+  gap: 32px; /* veći razmak između kartica */
+  padding: 16px 0;
 }
 .auto-card {
   background: #fff;
@@ -16,6 +17,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 440px; /* malo veća minimalna visina */
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s;
+}
+.auto-card:hover {
+  box-shadow: 0 6px 24px #0002;
+}
+.auto-card h3,
+.auto-info,
+.auto-opis {
+  width: 100%;
+  text-align: center;
 }
 .auto-slika {
   width: 100%;
@@ -25,7 +41,9 @@
 }
 .auto-info {
   display: flex;
-  gap: 18px;
+  flex-direction: column;   /* Prikazuje stavke jedno ispod drugog */
+  align-items: center;      /* Centrira ih horizontalno */
+  gap: 6px;                 /* Mali razmak između godine i cijene */
   margin-bottom: 8px;
   font-size: 1.05em;
 }
@@ -33,6 +51,7 @@
   color: #444;
   margin-bottom: 14px;
   text-align: center;
+  flex: 1 1 auto; /* Omogućava opisu da raste i popuni prostor */
 }
 .auto-btn {
   background: #8B1E1E;

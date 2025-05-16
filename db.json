@@ -160,6 +160,32 @@
       "datum": "2025-05-19",
       "vrijeme": "13:00",
       "ukupna_cijena": 80
+    },
+    {
+      "korisnik": "gost",
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "odabraneUsluge": [
+        {
+          "id": 1,
+          "kategorija": "Mehaničke usluge",
+          "naziv": "Mali servis",
+          "opis": "Zamjena ulja, uljnog filtera i osnovna provjera stanja vozila.",
+          "cijena": 100
+        },
+        {
+          "id": 14,
+          "kategorija": "Detailing",
+          "naziv": "Čišćenje i dezinfekcija klime (ozon)",
+          "opis": "Uklanja neugodne mirise i bakterije iz ventilacije.",
+          "cijena": 50
+        }
+      ],
+      "datum": "2025-05-21",
+      "vrijeme": "11:00",
+      "ukupna_cijena": 150
     }
   ],
   "poruke": [
