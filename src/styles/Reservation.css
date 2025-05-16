@@ -125,3 +125,66 @@
     gap: 8px;
   }
 }
+
+/* Pozadina za cijelu stranicu rezervacije */
+.reservation-page-container {
+  background: var(--background-color, #fff8f0);
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  box-sizing: border-box;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Pristup odbijen box */
+.reservation-denied {
+  background: linear-gradient(90deg, #ffd700 0%, #ffb300 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 36px 32px 28px 32px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  animation: fadeInDenied 0.7s;
+}
+
+.reservation-denied h2 {
+  color: #8B1E1E;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.reservation-denied p {
+  color: #2d1c1c;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.reservation-denied .login-btn {
+  background: #8B1E1E;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reservation-denied .login-btn:hover {
+  background: #FFD700;
+  color: #8B1E1E;
+}
+
+@keyframes fadeInDenied {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}

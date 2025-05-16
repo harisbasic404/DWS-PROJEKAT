@@ -126,6 +126,20 @@ function Reservation() {
     }
   };
 
+  if (!user) {
+    return (
+      <div className="reservation-page-container">
+        <div className="reservation-denied">
+          <h2>Pristup odbijen</h2>
+          <p>Molimo vas da se prijavite kako biste napravili rezervaciju.</p>
+          <button className="login-btn" onClick={() => window.location.href = '/login'}>
+            Prijava
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div className="reservation-page">

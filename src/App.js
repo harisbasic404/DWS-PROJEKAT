@@ -35,7 +35,7 @@ function App() {
           <Route path="/admin" element={user?.role === 'admin' ? <AdminDashboard /> : <p>Pristup odbijen</p>} />
 
           {/* Gost */}
-          <Route path="/reservation" element={user ? <Reservation /> : <p>Pristup odbijen</p>} />
+          <Route path="/reservation" element={<Reservation />} />
         </Routes>
       </main>
       <Footer />
