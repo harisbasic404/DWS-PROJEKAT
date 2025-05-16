@@ -1,11 +1,13 @@
 const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 const DB_FILE = 'db.json';
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.post('/rezervacije', (req, res) => {
   const novaRezervacija = req.body;
@@ -221,6 +223,10 @@ app.delete('/users/:id', (req, res) => {
   db.users = novi;
   fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf8');
   res.json({ poruka: 'Korisnik obrisan.' });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(3001, () => {
