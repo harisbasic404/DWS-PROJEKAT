@@ -1,0 +1,142 @@
+.login-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+}
+
+.login-card {
+  background: var(--light-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px 32px 32px 32px;
+  min-width: 340px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.login-toggle button {
+  background: none;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.login-toggle button.active,
+.login-toggle button:hover {
+  background: var(--primary-color);
+  color: var(--light-color);
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-input {
+  padding-right: 38px;
+  margin-bottom: 16px;
+  height: 40px;
+  box-sizing: border-box;
+  line-height: 40px;
+  display: block;
+}
+
+.show-hide-btn {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  height: 40px;
+  width: 32px;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-hide-btn svg {
+  display: block;
+  pointer-events: none;
+}
+
+.show-hide-btn:focus {
+  outline: none;
+  box-shadow: none;
+  border-radius: 50%;
+}
+
+.show-hide-btn:focus,
+.show-hide-btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.input-fullwidth {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  transition: border 0.2s;
+}
+
+.input-fullwidth:focus {
+  border: 1.5px solid var(--primary-color);
+  outline: none;
+}
+
+@media (max-width: 500px) {
+  .login-card {
+    padding: 20px 5vw;
+    min-width: unset;
+  }
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 32px 24px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 18px;
+}
+
+.login-error {
+  color: #b32e2e;
+  background: #ffd6d6;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1rem;
+}

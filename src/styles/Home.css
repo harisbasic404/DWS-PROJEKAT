@@ -1,0 +1,256 @@
+/* Home.css */
+
+/* Ukloni body, .home-container pozadinu! Koristi globalnu iz index.css */
+
+.home-container {
+  padding: 20px;
+  color: var(--text-color);
+  background: none;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 10px 40px 10px;
+  background: linear-gradient(120deg, #7a1818 60%, #b32e2e 100%);
+  color: #fff;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  position: relative;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.hero::before {
+  display: none; /* Uklanja overlay */
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/motor-bg.png') center/cover no-repeat;
+  opacity: 0.10; /* prilagodi po želji */
+  z-index: 0;
+  pointer-events: none;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.hero-logo {
+  width: 120px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 4px 16px #0002);
+  animation: popIn 1.2s;
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0;}
+  80% { transform: scale(1.1);}
+  100% { transform: scale(1); opacity: 1;}
+}
+.highlight {
+  color: var(--accent-color);
+  text-shadow: 0 2px 8px #8B1E1E66, 0 1px 0 #fff;
+}
+.cta-button {
+  margin-top: 22px;
+  padding: 12px 36px;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 12px #0002;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.cta-button:hover {
+  background: var(--primary-color);
+  color: var(--accent-color);
+  transform: scale(1.07);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.hero h1, .hero .highlight {
+  color: #FFD700;
+  text-shadow: 0 2px 8px #000a, 0 1px 0 #fff2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 0 1px 4px #0008;
+}
+
+.services {
+  padding: 48px 0 24px 0;
+  background: #fff;
+  color: #8B1E1E;
+  text-align: center;
+  animation: fadeIn 1.2s;
+}
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+.service-box {
+  background: #FFD700;
+  color: #8B1E1E;
+  border-radius: 16px;
+  padding: 28px 18px;
+  box-shadow: 0 4px 24px #8b1e1e22;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  animation: fadeInUp 1.2s;
+}
+.service-box:hover {
+  transform: translateY(-8px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 8px 32px #8b1e1e33;
+}
+
+/* ZAŠTO MI */
+.why-us {
+  background: #f9f6f2;
+  padding: 48px 0 24px 0;
+  text-align: center;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+.why-box {
+  background: #fff;
+  border: 2px solid #FFD700;
+  border-radius: 16px;
+  padding: 24px 16px;
+  color: #8B1E1E;
+  box-shadow: 0 2px 12px #FFD70022;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: fadeIn 1.2s;
+}
+.why-box:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 6px 24px #FFD70044;
+}
+
+/* RECENZIJE */
+.reviews {
+  background: #fff;
+  padding: 48px 0 24px 0;
+  text-align: center;
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+.review-box {
+  background: #8B1E1E;
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px 18px;
+  box-shadow: 0 4px 24px #8b1e1e33;
+  font-size: 1.1rem;
+  font-style: italic;
+  position: relative;
+  animation: fadeInUp 1.2s;
+}
+.review-box span {
+  display: block;
+  margin-top: 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+/* YOUTUBE SEKCIJA */
+.yt-section {
+  background: linear-gradient(120deg, #FFD700 60%, #8B1E1E 100%);
+  color: #8B1E1E;
+  text-align: center;
+  padding: 48px 0 40px 0;
+  border-radius: 0 0 32px 32px;
+  animation: fadeIn 1.2s;
+}
+.yt-section h2 {
+  color: #8B1E1E;
+}
+.yt-video-wrapper {
+  max-width: 560px;
+  margin: 0 auto 24px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px #8b1e1e33;
+  animation: popIn 1.2s;
+}
+.yt-btn {
+  display: inline-block;
+  margin-top: 18px;
+  background: #8B1E1E;
+  color: #FFD700;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px #8b1e1e22;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.yt-btn:hover {
+  background: #FFD700;
+  color: #8B1E1E;
+  transform: scale(1.07);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero, .services, .why-us, .reviews, .yt-section {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .yt-video-wrapper {
+    max-width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  .hero-logo {
+    width: 80px;
+  }
+  .service-box, .why-box, .review-box {
+    padding: 18px 8px;
+  }
+}
+
+.services, .why-us, .reviews, .yt-section {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 24px;
+  margin-bottom: 24px;
+}
+
+.wave-top {
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg width="100%" height="80" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 80V0C240 40 480 40 720 0C960 -40 1200 40 1440 0V80H0Z" fill="%23FFD700"/></svg>') no-repeat center/cover;
+}

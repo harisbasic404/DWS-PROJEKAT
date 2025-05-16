@@ -1,0 +1,181 @@
+.about-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 36px 32px 28px 32px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-nobox {
+  max-width: 1200px;
+  margin: 48px auto 48px auto;
+  padding: 0 24px;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--text-color, #222);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-title {
+  color: var(--primary-color, #FFD700);
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.about-section {
+  margin-bottom: 18px;
+}
+
+.team-title {
+  margin-top: 48px;
+  text-align: center;
+  color: #8B1E1E;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.team-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s forwards;
+  background: #f9f6f2;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #FFD70022;
+  padding: 24px 18px;
+}
+
+.team-member:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.team-member-anim {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  min-height: 260px;
+  opacity: 0;
+  transition: 
+    opacity 0.8s cubic-bezier(.4,0,.2,1),
+    transform 1.2s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
+}
+
+.team-member-anim.left {
+  flex-direction: row;
+  transform: translateX(-120px);
+}
+.team-member-anim.right {
+  flex-direction: row-reverse;
+  transform: translateX(120px);
+}
+.team-member-anim.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+.team-member-anim.out-view {
+  opacity: 0;
+}
+
+.team-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px #8b1e1e33;
+  border: 4px solid #FFD700;
+}
+
+.team-img-large {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px #8b1e1e33;
+  border: 5px solid #FFD700;
+  background: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.team-info h3 {
+  margin: 0 0 6px 0;
+  color: #8B1E1E;
+  font-size: 2rem;
+}
+.team-info span {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.team-info p {
+  margin-top: 8px;
+  color: #333;
+  font-size: 1.13rem;
+}
+
+/* Animacije */
+@keyframes fadeIn-left {
+  from { opacity: 0; transform: translateX(-80px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+@keyframes fadeIn-right {
+  from { opacity: 0; transform: translateX(80px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+.fade-in-left {
+  animation-name: fadeIn-left;
+}
+.fade-in-right {
+  animation-name: fadeIn-right;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .team-member, .team-member:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+  .team-img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-nobox {
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+  .team-member-anim, .team-member-anim.left, .team-member-anim.right {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 18px;
+    min-height: 0;
+    transform: none;
+  }
+  .team-img-large {
+    width: 110px;
+    height: 110px;
+  }
+}

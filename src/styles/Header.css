@@ -1,0 +1,103 @@
+.header-main {
+  background: #8B1E1E;
+  color: #fff;
+  box-shadow: 0 1px 8px #0002;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-logo {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #FFD700;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.nav-list {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-link {
+  color: #FFD700;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: #FFD700;
+  color: #8B1E1E;
+  box-shadow: 0 1px 4px #FFD70022;
+}
+
+/* Responsive: logo i naziv centrirani, linkovi ispod */
+@media (max-width: 700px) {
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 8px;
+    gap: 8px;
+  }
+
+  .logo-title {
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .header-logo {
+    height: 48px;
+    width: 48px;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 6px 12px;
+  }
+}

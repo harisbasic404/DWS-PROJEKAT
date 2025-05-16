@@ -1,0 +1,127 @@
+.reservation-form {
+  background: var(--background-color, #fff8f0);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px 32px 32px 32px;
+  max-width: 700px; /* povećano sa 480px */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.reservation-form h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.reservation-form h3 {
+  color: var(--secondary-color);
+  margin-top: 24px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.reservation-form p {
+  margin: 18px 0 0 0;
+  font-weight: 500;
+  color: var(--accent-color, #1C1C1C);
+}
+
+.MuiFormControl-root,
+.MuiTextField-root,
+.MuiSelect-root {
+  margin-bottom: 18px !important;
+}
+
+.MuiInputBase-root input {
+  background: #fff;
+  border-radius: 6px;
+}
+
+.MuiButton-root {
+  background: var(--primary-color) !important;
+  color: var(--light-color, #fff) !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  margin-top: 18px;
+  box-shadow: 0 2px 8px rgba(139,30,30,0.08);
+  transition: background 0.2s;
+}
+
+.MuiButton-root:hover {
+  background: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.MuiCheckbox-root.Mui-checked {
+  color: var(--primary-color) !important;
+}
+
+.MuiMenuItem-root[disabled] {
+  color: #bdbdbd !important;
+  font-weight: normal !important;
+}
+
+.reservation-list {
+  margin: 40px auto 0 auto;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.reservation-item {
+  background: #fffbe6;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #ffd60022;
+  padding: 18px 18px 12px 18px;
+  color: var(--primary-color);
+  font-size: 1.05rem;
+  transition: box-shadow 0.2s, transform 0.13s;
+}
+
+.reservation-item:hover {
+  box-shadow: 0 8px 32px #ffd60044;
+  transform: translateY(-2px) scale(1.01);
+}
+
+@media (max-width: 600px) {
+  .reservation-form {
+    padding: 18px 4vw;
+    max-width: 98vw;
+  }
+  .reservation-form h2 {
+    font-size: 1.3rem;
+  }
+}
+
+.reservation-page {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.usluge-grupa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+  .reservation-form {
+    max-width: 98vw;
+    padding: 18px 4vw;
+  }
+  .usluge-grupa {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

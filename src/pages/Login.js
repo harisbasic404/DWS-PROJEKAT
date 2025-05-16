@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+import LoginForm from '../components/LoginForm';
+import RegisterForm from '../components/RegisterForm';
+import '../styles/Login.css';
+
+function Login() {
+  const [prikaziRegistraciju, setPrikaziRegistraciju] = useState(false);
+
+  return (
+    <div className="login-page-container">
+      <div className="login-card">
+        <div className="login-toggle">
+          <button
+            className={!prikaziRegistraciju ? "active" : ""}
+            onClick={() => setPrikaziRegistraciju(false)}
+            type="button"
+          >
+            Prijava
+          </button>
+          <button
+            className={prikaziRegistraciju ? "active" : ""}
+            onClick={() => setPrikaziRegistraciju(true)}
+            type="button"
+          >
+            Registracija
+          </button>
+        </div>
+        {prikaziRegistraciju ? <RegisterForm /> : <LoginForm />}
+      </div>
+    </div>
+  );
+}
+
+export default Login;

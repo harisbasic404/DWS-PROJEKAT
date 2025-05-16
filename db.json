@@ -1,0 +1,382 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "ime": "Admin",
+      "prezime": "Administrator",
+      "password": "Admin1234",
+      "role": "admin",
+      "email": "admin@gmail.com",
+      "telefon": "+38761123456"
+    },
+    {
+      "id": "2",
+      "username": "gost",
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "password": "Gost1234",
+      "role": "guest",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456"
+    },
+    {
+      "username": "haris.basic",
+      "ime": "haris",
+      "prezime": "basic",
+      "email": "harisbasic@gmail.com",
+      "password": "Haris1234",
+      "telefon": "+3870644468969",
+      "role": "guest"
+    }
+  ],
+  "rezervacije": [
+    {
+      "korisnik": "admin",
+      "ime": "Admin",
+      "prezime": "Administrator",
+      "email": "admin@gmail.com",
+      "telefon": "+38761123456",
+      "odabraneUsluge": [
+        {
+          "id": 1,
+          "kategorija": "Mehaničke usluge",
+          "naziv": "Mali servis",
+          "opis": "Zamjena ulja, uljnog filtera i osnovna provjera stanja vozila.",
+          "cijena": 100
+        },
+        {
+          "id": 6,
+          "kategorija": "Mehaničke usluge",
+          "naziv": "Popravak alternatora ili anlasera",
+          "opis": "Demontaža, čišćenje, zamjena četkica ili kompleta (ako isplativo).",
+          "cijena": 80
+        },
+        {
+          "id": 13,
+          "kategorija": "Detailing",
+          "naziv": "Detailing motora",
+          "opis": "Sigurno čišćenje motornog prostora bez oštećenja senzora.",
+          "cijena": 70
+        },
+        {
+          "id": 14,
+          "kategorija": "Detailing",
+          "naziv": "Čišćenje i dezinfekcija klime (ozon)",
+          "opis": "Uklanja neugodne mirise i bakterije iz ventilacije.",
+          "cijena": 50
+        }
+      ],
+      "datum": "2025-05-19",
+      "vrijeme": "08:00",
+      "ukupna_cijena": 300
+    },
+    {
+      "korisnik": "gost",
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "odabraneUsluge": [
+        {
+          "id": 1,
+          "kategorija": "Mehaničke usluge",
+          "naziv": "Mali servis",
+          "opis": "Zamjena ulja, uljnog filtera i osnovna provjera stanja vozila.",
+          "cijena": 100
+        }
+      ],
+      "datum": "2025-05-19",
+      "vrijeme": "10:00",
+      "ukupna_cijena": 100
+    },
+    {
+      "korisnik": "haris.basic",
+      "ime": "haris",
+      "prezime": "basic",
+      "email": "harisbasic@gmail.com",
+      "telefon": "+3870644468969",
+      "odabraneUsluge": [
+        {
+          "id": 8,
+          "kategorija": "Detailing",
+          "naziv": "Vanjsko pranje",
+          "opis": "Temeljno pranje eksterijera i felgi.",
+          "cijena": 50
+        },
+        {
+          "id": 14,
+          "kategorija": "Detailing",
+          "naziv": "Čišćenje i dezinfekcija klime (ozon)",
+          "opis": "Uklanja neugodne mirise i bakterije iz ventilacije.",
+          "cijena": 50
+        },
+        {
+          "id": 13,
+          "kategorija": "Detailing",
+          "naziv": "Detailing motora",
+          "opis": "Sigurno čišćenje motornog prostora bez oštećenja senzora.",
+          "cijena": 70
+        }
+      ],
+      "datum": "2025-05-19",
+      "vrijeme": "11:00",
+      "ukupna_cijena": 170
+    },
+    {
+      "korisnik": "haris.basic",
+      "ime": "haris",
+      "prezime": "basic",
+      "email": "harisbasic@gmail.com",
+      "telefon": "+3870644468969",
+      "odabraneUsluge": [
+        {
+          "id": 5,
+          "kategorija": "Mehaničke usluge",
+          "naziv": "Dijagnostika motora (OBD skener)",
+          "opis": "Brzo očitavanje grešaka na motoru, mjenjaču i drugim sistemima.",
+          "cijena": 40
+        }
+      ],
+      "datum": "2025-05-19",
+      "vrijeme": "15:00",
+      "ukupna_cijena": 40
+    },
+    {
+      "korisnik": "gost",
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "odabraneUsluge": [
+        {
+          "id": 3,
+          "kategorija": "Mehaničke usluge",
+          "naziv": "Zamjena kočionih pločica",
+          "opis": "Prednje i/ili zadnje pločice, provjera diska i sistema.",
+          "cijena": 80
+        }
+      ],
+      "datum": "2025-05-19",
+      "vrijeme": "13:00",
+      "ukupna_cijena": 80
+    }
+  ],
+  "poruke": [
+    {
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "korisnik": "gost",
+      "poruka": "test\n",
+      "datum": "2025-05-15T18:17:20.379Z",
+      "id": "mapoz6rj"
+    },
+    {
+      "ime": "haris",
+      "prezime": "basic",
+      "email": "harisbasic@gmail.com",
+      "telefon": "+3870644468969",
+      "korisnik": "haris.basic",
+      "poruka": "do kad radite\n",
+      "datum": "2025-05-15T19:53:40.803Z",
+      "id": "mapsf2yn"
+    },
+    {
+      "ime": "haris",
+      "prezime": "basic",
+      "email": "harisbasic@gmail.com",
+      "telefon": "+3870644468969",
+      "korisnik": "haris.basic",
+      "poruka": "test",
+      "datum": "2025-05-15T22:00:26.237Z",
+      "id": "mapwy3dl"
+    },
+    {
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "korisnik": "gost",
+      "poruka": "opet test",
+      "datum": "2025-05-16T06:48:41.637Z",
+      "id": "maqftfoh"
+    }
+  ],
+  "servisneUsluge": [
+    {
+      "id": 1,
+      "kategorija": "Mehaničke usluge",
+      "naziv": "Mali servis",
+      "opis": "Zamjena ulja, uljnog filtera i osnovna provjera stanja vozila.",
+      "cijena": 100
+    },
+    {
+      "id": 2,
+      "kategorija": "Mehaničke usluge",
+      "naziv": "Veliki servis",
+      "opis": "Zamjena svih filtera, ulja, svjećica, pregled kočnica i trapa.",
+      "cijena": 200
+    },
+    {
+      "id": 3,
+      "kategorija": "Mehaničke usluge",
+      "naziv": "Zamjena kočionih pločica",
+      "opis": "Prednje i/ili zadnje pločice, provjera diska i sistema.",
+      "cijena": 80
+    },
+    {
+      "id": 4,
+      "kategorija": "Mehaničke usluge",
+      "naziv": "Zamjena zupčastog remena",
+      "opis": "Uključuje vodenu pumpu i natezače (ovisno o modelu).",
+      "cijena": 250
+    },
+    {
+      "id": 5,
+      "kategorija": "Mehaničke usluge",
+      "naziv": "Dijagnostika motora (OBD skener)",
+      "opis": "Brzo očitavanje grešaka na motoru, mjenjaču i drugim sistemima.",
+      "cijena": 40
+    },
+    {
+      "id": 6,
+      "kategorija": "Mehaničke usluge",
+      "naziv": "Popravak alternatora ili anlasera",
+      "opis": "Demontaža, čišćenje, zamjena četkica ili kompleta (ako isplativo).",
+      "cijena": 80
+    },
+    {
+      "id": 7,
+      "kategorija": "Mehaničke usluge",
+      "naziv": "Zamjena ulja u mjenjaču (manualni/automatski)",
+      "opis": "Sa filterom i ispiranjem sistema ako je potrebno.",
+      "cijena": 120
+    },
+    {
+      "id": 8,
+      "kategorija": "Detailing",
+      "naziv": "Vanjsko pranje",
+      "opis": "Temeljno pranje eksterijera i felgi.",
+      "cijena": 50
+    },
+    {
+      "id": 9,
+      "kategorija": "Detailing",
+      "naziv": "Unutrašnje čišćenje i usisavanje",
+      "opis": "Usisavanje, čišćenje plastika i stakala, dezinfekcija.",
+      "cijena": 60
+    },
+    {
+      "id": 10,
+      "kategorija": "Detailing",
+      "naziv": "Dubinsko čišćenje sjedišta i poda",
+      "opis": "Parno čišćenje i ekstrakcija nečistoća iz tapacirunga.",
+      "cijena": 100
+    },
+    {
+      "id": 11,
+      "kategorija": "Detailing",
+      "naziv": "Poliranje karoserije (jednoslojno)",
+      "opis": "Uklanjanje sitnih ogrebotina i povrat sjaja.",
+      "cijena": 150
+    },
+    {
+      "id": 12,
+      "kategorija": "Detailing",
+      "naziv": "Keramička zaštita laka (do 12 mjeseci)",
+      "opis": "Zaštita karoserije od prljavštine, UV zraka i ogrebotina.",
+      "cijena": 300
+    },
+    {
+      "id": 13,
+      "kategorija": "Detailing",
+      "naziv": "Detailing motora",
+      "opis": "Sigurno čišćenje motornog prostora bez oštećenja senzora.",
+      "cijena": 70
+    },
+    {
+      "id": 14,
+      "kategorija": "Detailing",
+      "naziv": "Čišćenje i dezinfekcija klime (ozon)",
+      "opis": "Uklanja neugodne mirise i bakterije iz ventilacije.",
+      "cijena": 50
+    }
+  ],
+  "detailingUsluge": [
+    {
+      "id": "3",
+      "naziv": "Pranje",
+      "cijena": 50
+    },
+    {
+      "id": "4",
+      "naziv": "Usisavanje",
+      "cijena": 40
+    },
+    {
+      "id": "5",
+      "naziv": "Poliranje",
+      "cijena": 150
+    }
+  ],
+  "automobili": [
+    {
+      "id": "a1",
+      "naziv": "BMW E30 M3",
+      "godiste": 1988,
+      "cijena": 60000,
+      "opis": "Jedan od najpoznatijih sportskih automobila iz 80-ih, ikona DTM trka.",
+      "slika": "/assets/e30.png"
+    },
+    {
+      "id": "a2",
+      "naziv": "Toyota Supra MK4",
+      "godiste": 1996,
+      "cijena": 85000,
+      "opis": "Model s legendarnim 2JZ motorom, omiljen u tuning zajednici.",
+      "slika": "/assets/supra.png"
+    },
+    {
+      "id": "a3",
+      "naziv": "Mazda RX-7 FD",
+      "godiste": 1994,
+      "cijena": 70000,
+      "opis": "Lagani sportski kupe s rotacionim motorom, izuzetno rijedak u Evropi.",
+      "slika": "/assets/rx7.png"
+    },
+    {
+      "id": "a4",
+      "naziv": "Mercedes-Benz 190E 2.5-16",
+      "godiste": 1990,
+      "cijena": 50000,
+      "opis": "Klasik iz DTM-a koji konkurira BMW E30 M3.",
+      "slika": "/assets/190e.png"
+    },
+    {
+      "id": "a5",
+      "naziv": "Honda NSX",
+      "godiste": 1992,
+      "cijena": 95000,
+      "opis": "Japanski superautomobil razvijen uz pomoć Ayrtona Senne.",
+      "slika": "/assets/nsx.png"
+    },
+    {
+      "id": "a6",
+      "naziv": "Alfa Romeo GTV6",
+      "godiste": 1985,
+      "cijena": 40000,
+      "opis": "Rijetki coupe s V6 Busso motorom i jakim karakterom.",
+      "slika": "/assets/gtv6.png"
+    },
+    {
+      "naziv": "test",
+      "godiste": "2025",
+      "cijena": "20",
+      "opis": "hrkljuš",
+      "slika": "https://www.automoli.com/common/vehicles/_assets/img/gallery/f46/mercedes-benz-e-class-w211-facelift-2006.jpg",
+      "id": "fm3yudwal7i"
+    }
+  ]
+}

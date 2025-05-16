@@ -1,0 +1,206 @@
+.footer-main {
+  background: var(--primary-color);
+  color: var(--light-color);
+  padding: 30px 0 10px 0;
+  font-size: 1rem;
+  position: relative; /* Ovo je važno za absolute positioning watermarka */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Poravnaj sve na vrh */
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 0 16px;
+}
+
+.footer-info {
+  flex: 1.2;
+  min-width: 220px;
+  max-width: 340px;
+}
+
+.footer-info h3 {
+  color: var(--secondary-color);
+  margin-bottom: 8px;
+}
+
+.footer-moto {
+  font-style: italic;
+  color: var(--secondary-color, #FFD700);
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.footer-cta-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--secondary-color, #FFD700);
+  color: var(--primary-color, #8B1E1E);
+  font-weight: bold;
+  padding: 8px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(139,30,30,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.footer-cta-btn:hover {
+  background: var(--primary-color, #8B1E1E);
+  color: #fff;
+}
+
+.footer-map {
+  flex: 1.1;
+  min-width: 260px;
+  max-width: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: box-shadow 0.3s;
+}
+.footer-map:hover {
+  box-shadow: 0 0 0 4px var(--secondary-color, #FFD700), 0 4px 24px rgba(0,0,0,0.12);
+}
+
+/* Stilizacija i centriranje ikonica društvenih mreža */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* Poravnaj desno */
+  justify-content: flex-start;
+  margin-top: 0;           /* Ukloni dodatni razmak */
+  min-width: 220px;
+}
+
+.footer-social h4 {
+  margin-bottom: 14px;
+  font-size: 1.15rem;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+.social-icons {
+  display: flex;
+  gap: 28px;
+  justify-content: flex-end; /* Poravnaj ikone desno */
+  align-items: center;
+}
+
+.social-icons img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFD700;
+  padding: 8px;
+  box-shadow: 0 2px 12px #8b1e1e22;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  filter: grayscale(0.15);
+}
+
+.social-icons img:hover {
+  transform: scale(1.18) rotate(-4deg);
+  box-shadow: 0 4px 24px #FFD70055;
+  filter: grayscale(0) drop-shadow(0 0 8px #FFD70088);
+  background: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 8px;
+  margin-top: 10px;
+}
+
+/* primjer za watermark u Footer.css */
+.footer-watermark {
+  position: absolute;
+  right: 60px;
+  bottom: 30px;
+  width: 180px;      /* još veće */
+  height: 180px;
+  opacity: 0.38;     /* još vidljivije */
+  pointer-events: none;
+  z-index: 2;
+  background: none;
+  object-fit: contain;
+}
+
+.footer-brand {
+  text-align: right;
+  margin-bottom: 18px;
+}
+.footer-brand h3 {
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+  font-size: 1.3rem;
+}
+.footer-brand .footer-moto {
+  font-style: italic;
+  color: var(--secondary-color, #FFD700);
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+.footer-social {
+  align-items: flex-end;
+}
+
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .footer-info, .footer-map, .footer-social {
+    align-items: center !important;
+    max-width: 98vw;
+    text-align: center !important;
+  }
+  .footer-social {
+    align-items: center !important;
+    margin-top: 16px;
+  }
+  .footer-map {
+    max-width: 98vw;
+  }
+  .footer-watermark {
+    right: 10px;
+    bottom: 10px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.32;
+  }
+  .footer-brand, .footer-social {
+    text-align: center;
+    align-items: center;
+  }
+  .social-icons {
+    justify-content: center !important;
+  }
+}
+
+/* Responsive za manje ekrane */
+@media (max-width: 700px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 0 10vw;
+  }
+  .footer-info, .footer-social {
+    max-width: 100%;
+  }
+  .footer-social {
+    margin-top: 24px;
+  }
+  .social-icons img {
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+  }
+}
