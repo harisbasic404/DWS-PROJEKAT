@@ -238,6 +238,16 @@
       "poruka": "test",
       "datum": "2025-05-16T09:11:42.119Z",
       "id": "maqkxcff"
+    },
+    {
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "korisnik": "gost",
+      "poruka": "jesul zdravi pragovi kod mercedesa",
+      "datum": "2025-05-16T10:36:56.490Z",
+      "id": "maqnyyp7"
     }
   ],
   "servisneUsluge": [
@@ -413,6 +423,14 @@
       "opis": "hrkljuš",
       "slika": "https://www.automoli.com/common/vehicles/_assets/img/gallery/f46/mercedes-benz-e-class-w211-facelift-2006.jpg",
       "id": "fm3yudwal7i"
+    },
+    {
+      "naziv": "Audi A4 B6",
+      "godiste": "2004",
+      "cijena": "5000",
+      "opis": "Nov, tek opran",
+      "slika": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Audi_A4_B6_%282000%E2%80%932004%29_front_MJ.JPG",
+      "id": "xoi3ufog2kk"
     }
   ]
 }
