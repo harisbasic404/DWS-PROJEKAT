@@ -29,12 +29,12 @@ function MessagesManager() {
   return (
     <div>
       <h3>Poruke</h3>
-      <div className="admin-table-wrapper" style={{ overflowX: "auto" }}>
-        <table className="admin-table" style={{ minWidth: 600 }}>
+      <div className="admin-table-wrapper">
+        <table className="admin-table" style={{ minWidth: 1200 }}>
           <tbody>
             {atributi.map(attr => (
               <tr key={attr.key}>
-                <th style={{ textAlign: "left", background: "#f8eaea", minWidth: 120 }}>{attr.label}</th>
+                <th style={{ textAlign: "left", background: "#f8eaea" }}>{attr.label}</th>
                 {poruke.map(p => (
                   <td key={p.id + attr.key}>
                     {attr.key === "akcija"

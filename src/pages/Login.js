@@ -5,6 +5,7 @@ import '../styles/Login.css';
 
 function Login() {
   const [prikaziRegistraciju, setPrikaziRegistraciju] = useState(false);
+  const [toast, setToast] = useState('');
 
   return (
     <div className="login-page-container">
@@ -25,8 +26,13 @@ function Login() {
             Registracija
           </button>
         </div>
-        {prikaziRegistraciju ? <RegisterForm /> : <LoginForm />}
+        {prikaziRegistraciju
+          ? <RegisterForm setToast={setToast} onSuccess={() => setPrikaziRegistraciju(false)} />
+          : <LoginForm />}
       </div>
+      {toast && (
+        <div className="toast">{toast}</div>
+      )}
     </div>
   );
 }

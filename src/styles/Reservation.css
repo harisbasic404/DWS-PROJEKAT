@@ -190,3 +190,13 @@
   from { opacity: 0; transform: translateY(40px);}
   to { opacity: 1; transform: translateY(0);}
 }
+
+.menuitem-zauzet {
+  color: #b30000 !important;
+  background-color: #ffe6e6 !important;
+  font-weight: bold !important;
+  opacity: 1 !important;
+}
+.menuitem-slobodan {
+  color: #228B22 !important;
+}

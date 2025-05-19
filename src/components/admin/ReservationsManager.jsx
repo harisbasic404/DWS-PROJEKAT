@@ -32,14 +32,14 @@ function ReservationsManager() {
   return (
     <div>
       <h3>Rezervacije</h3>
-      <div className="admin-table-wrapper" style={{ overflowX: "auto" }}>
-        <table className="admin-table" style={{ minWidth: 600 }}>
+      <div className="admin-table-wrapper">
+        <table className="admin-table" style={{ minWidth: 1200 }}>
           <tbody>
             {atributi.map(attr => (
               <tr key={attr.key}>
-                <th style={{ textAlign: "left", background: "#f8eaea", minWidth: 120 }}>{attr.label}</th>
-                {rezervacije.map(r => (
-                  <td key={r.id + attr.key}>
+                <th style={{ textAlign: "left", background: "#f8eaea" }}>{attr.label}</th>
+                {rezervacije.map((r, idx) => (
+                  <td key={r.id ? r.id + attr.key : idx + attr.key}>
                     {attr.key === "odabraneUsluge"
                       ? (Array.isArray(r.odabraneUsluge) && r.odabraneUsluge.length > 0
                           ? r.odabraneUsluge.map((u, i) => <div key={i}>{u.naziv}</div>)

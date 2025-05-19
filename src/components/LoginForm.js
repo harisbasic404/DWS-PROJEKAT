@@ -1,12 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthContext';
 
 function LoginForm() {
-  const [email, setEmail] = useState('');
+  const [userInput, setUserInput] = useState(''); // Može biti email ili username
   const [password, setPassword] = useState('');
   const [poruka, setPoruka] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [toast, setToast] = useState('');
 
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -14,51 +15,67 @@ function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email || !password) {
-      setPoruka('Unesite i email i lozinku.');
+    if (!userInput || !password) {
+      setPoruka('Unesite email/korisničko ime i lozinku.');
       return;
     }
+
+    // Provjeri da li je email ili username
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInput);
 
     try {
       const res = await fetch('http://localhost:3001/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({
+          [isEmail ? 'email' : 'username']: userInput,
+          password
+        })
       });
-      if (res.ok) {
-        const korisnik = await res.json();
-        login(korisnik);
 
-        localStorage.setItem('ulogovaniKorisnik', JSON.stringify({
-          username: korisnik.username,
-          ime: korisnik.ime,
-          prezime: korisnik.prezime,
-          email: korisnik.email,
-          role: korisnik.role,
-          telefon: korisnik.telefon
-        }));
-
-        if (korisnik.role === 'admin') navigate('/admin');
-        else navigate('/reservation');
-
-        setPoruka('');
-      } else {
-        setPoruka('Pogrešan email ili lozinka.');
+      if (!res.ok) {
+        setPoruka('Pogrešan email/korisničko ime ili lozinka.');
+        return;
       }
+
+      const korisnik = await res.json();
+
+      login(korisnik);
+
+      localStorage.setItem('ulogovaniKorisnik', JSON.stringify({
+        username: korisnik.username,
+        ime: korisnik.ime,
+        prezime: korisnik.prezime,
+        email: korisnik.email,
+        role: korisnik.role,
+        telefon: korisnik.telefon
+      }));
+
+      if (korisnik.role === 'admin') navigate('/admin');
+      else navigate('/reservation');
+
+      setPoruka('');
     } catch (error) {
       setPoruka('Greška pri povezivanju sa serverom.');
     }
   };
 
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => setToast(''), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
+
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
       <h2>Prijava</h2>
 
-      <label>Email:</label>
+      <label>Email ili korisničko ime:</label>
       <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        type="text"
+        value={userInput}
+        onChange={(e) => setUserInput(e.target.value)}
         required
         className="input-fullwidth"
       />
@@ -80,7 +97,7 @@ function LoginForm() {
           aria-label={showPassword ? "Sakrij lozinku" : "Prikaži lozinku"}
         >
           {showPassword ? (
-           // Ikonica otvorenog oka
+            // Ikonica otvorenog oka
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <ellipse cx="12" cy="12" rx="10" ry="7" stroke="#8B1E1E" strokeWidth="2"/>
               <circle cx="12" cy="12" r="3" stroke="#8B1E1E" strokeWidth="2"/>

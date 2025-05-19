@@ -5,7 +5,7 @@
   border-radius: 28px;
   background: #fff;
   box-shadow: 0 8px 32px #0001;
-  padding: 32px 24px;
+  padding: 32px 0; /* Smanjen padding sa 32px 24px na 32px 0 */
   display: flex;
   min-height: 700px;
 }
@@ -25,6 +25,7 @@
   border-right: 1.5px solid #eee;
   border-radius: 18px 0 0 18px;
   align-items: stretch;
+  flex-shrink: 0; /* Sidebar NE smije da se sužava */
 }
 
 .admin-sidebar button {
@@ -48,13 +49,12 @@
 }
 
 .admin-content {
-  width: 100%;
+  flex: 1;
   min-width: 0;
   overflow-x: auto;
-  padding: 40px 36px 36px 36px;
+  padding: 40px 24px; /* Dodaj horizontalni padding */
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .admin-content > h2,
@@ -69,27 +69,43 @@
   width: 100%;
   overflow-x: auto;
   margin-bottom: 32px;
-  background: #faf9f6;
-  border-radius: 14px;
   box-shadow: 0 4px 24px #0001;
-  padding: 18px 0;
+  /* Dodaj razmak od sidebar-a i desne ivice */
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .admin-table {
-  width: 100%;
-  table-layout: fixed; /* Rasporedi kolone ravnomjerno */
+  min-width: 1200px;
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0 8px;
   background: transparent;
+  margin: 12px 0;
 }
 
 .admin-table th,
 .admin-table td {
+  width: 140px;
   padding: 12px 10px;
   font-size: 1em;
   border-bottom: 1px solid #f0e6d6;
   text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Omogući prelom teksta za opis/veliki tekst */
+.admin-table th:nth-child(4),
+.admin-table td:nth-child(4),
+.admin-table th:nth-child(6),
+.admin-table td:nth-child(6) {
+  white-space: pre-line !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  word-break: break-word !important;
 }
 
 .admin-table th {
@@ -101,6 +117,7 @@
 .admin-table td {
   background: #fff;
   color: #222;
+  border-radius: 0 0 8px 8px;
 }
 
 .admin-table th:nth-child(1),
@@ -113,21 +130,15 @@
   max-width: 180px; /* Opis */
 }
 
-/* Ravnomjerno rasporedi širinu kolona */
-.admin-table th,
-.admin-table td {
-  width: auto;
-}
-
-.admin-table tr:nth-child(even) th {
-  background: #f3f3f3;
-}
-
 .admin-table th:nth-child(6),
 .admin-table td:nth-child(6) {
   width: 160px; /* Proširi samo kolonu "Usluge" */
   max-width: 180px;
   white-space: pre-line;
+}
+
+.admin-table tr:nth-child(even) th {
+  background: #f3f3f3;
 }
 
 .admin-table tr {
@@ -141,10 +152,6 @@
 
 .admin-table tr:last-child td {
   border-bottom: none;
-}
-
-.admin-table td {
-  border-radius: 0 0 8px 8px;
 }
 
 .admin-table ul {

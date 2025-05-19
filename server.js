@@ -48,17 +48,40 @@ app.post('/users', (req, res) => {
   res.status(201).json({ poruka: 'Korisnik uspješno registrovan.' });
 });
 
+// GET /users?username=...&email=...
+app.get('/users', (req, res) => {
+  const db = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+  let users = db.users || [];
+  const { email, username } = req.query;
+
+  if (email) {
+    users = users.filter(u => u.email === email);
+  }
+  if (username) {
+    users = users.filter(u => u.username === username);
+  }
+
+  res.json(users);
+});
+
+// POST /login
 app.post('/login', (req, res) => {
-  const { email, password } = req.body;
+  const { email, username, password } = req.body;
   const db = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
   const users = db.users || [];
-  const user = users.find(u => u.email === email && u.password === password);
+  // ESLint warning: clarify order with parentheses!
+  const user = users.find(u =>
+    (
+      (email && u.email === email) ||
+      (username && u.username === username)
+    ) &&
+    u.password === password
+  );
   if (user) {
-    // Ne šalji password nazad!
     const { password, ...userWithoutPassword } = user;
-    res.json(userWithoutPassword); // <-- OVO JE DOBRO!
+    res.json(userWithoutPassword);
   } else {
-    res.status(401).json({ poruka: 'Pogrešan email ili lozinka.' });
+    res.status(401).json({ poruka: 'Pogrešan email/korisničko ime ili lozinka.' });
   }
 });
 
@@ -182,11 +205,6 @@ app.delete('/servisneUsluge/:id', (req, res) => {
 app.get('/servisneUsluge', (req, res) => {
   const db = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
   res.json(db.servisneUsluge || []);
-});
-
-app.get('/users', (req, res) => {
-  const db = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
-  res.json(db.users || []);
 });
 
 // Brisanje poruke

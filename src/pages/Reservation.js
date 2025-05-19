@@ -52,7 +52,12 @@ function Reservation() {
             const rDatum = r.datum.length > 10 ? r.datum.slice(0, 10) : r.datum;
             return rDatum === dan;
           });
-          setZauzetiTermini(zauzeti.map(r => r.vrijeme));
+          // Ovdje formatiraj vrijeme na "HH:mm"
+          setZauzetiTermini(zauzeti.map(r => {
+            if (!r.vrijeme) return "";
+            const [h, m] = r.vrijeme.split(':');
+            return `${h.padStart(2, '0')}:${m.padStart(2, '0')}`;
+          }));
         })
         .catch(() => setZauzetiTermini([]));
     } else {
@@ -93,7 +98,7 @@ function Reservation() {
       email,
       telefon,
       odabraneUsluge,
-      datum: datum ? datum.toISOString().slice(0, 10) : "",
+      datum: datum ? format(datum, "yyyy-MM-dd") : "",
       vrijeme,
       ukupna_cijena: forma.ukupnaCijena
     };
@@ -237,8 +242,9 @@ function Reservation() {
                   value={time}
                   disabled={isZauzet}
                   style={{
-                    color: isZauzet ? "red" : "green",
-                    fontWeight: "bold"
+                    color: isZauzet ? "#b30000" : "#228B22",
+                    fontWeight: isZauzet ? "bold" : "normal",
+                    backgroundColor: isZauzet ? "#ffe6e6" : "#e6ffe6"
                   }}
                 >
                   {time} {isZauzet ? "(zauzeto)" : "(slobodno)"}

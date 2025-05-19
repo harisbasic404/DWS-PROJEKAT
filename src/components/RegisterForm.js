@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 
-function RegisterForm() {
+function RegisterForm({ setToast, onSuccess }) {
   const [ime, setIme] = useState('');
   const [prezime, setPrezime] = useState('');
   const [email, setEmail] = useState('');
   const [telefon, setTelefon] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [poruka, setPoruka] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [usernameError, setUsernameError] = useState(''); // Dodano
 
   const passwordHelp = "Lozinka mora imati najmanje 8 karaktera, veliko i malo slovo i broj.";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setPoruka('');
+    setUsernameError('');
 
-    if (!email || !password || !ime || !prezime || !telefon) {
+    if (!email || !password || !ime || !prezime || !telefon || !username) {
       setPoruka('Sva polja su obavezna.');
       return;
     }
@@ -33,8 +37,21 @@ function RegisterForm() {
       return;
     }
 
+    // Provjera jedinstvenosti username-a
+    try {
+      const resUser = await fetch(`http://localhost:3001/users?username=${encodeURIComponent(username)}`);
+      const dataUser = await resUser.json();
+      if (dataUser.length > 0) {
+        setUsernameError('Korisničko ime je zauzeto.');
+        return;
+      }
+    } catch (err) {
+      setUsernameError('Greška pri provjeri korisničkog imena.');
+      return;
+    }
+
     const noviKorisnik = {
-      username: `${ime.toLowerCase()}.${prezime.toLowerCase()}`,
+      username,
       ime,
       prezime,
       email,
@@ -57,6 +74,9 @@ function RegisterForm() {
         setEmail('');
         setPassword('');
         setTelefon('');
+        setUsername('');
+        if (setToast) setToast('Registracija uspješna! Možete se prijaviti.');
+        if (onSuccess) onSuccess();
       } else {
         setPoruka('Greška prilikom registracije.');
       }
@@ -68,6 +88,23 @@ function RegisterForm() {
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
       <h2>Registracija</h2>
+
+      <label>Korisničko ime:</label>
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => {
+          setUsername(e.target.value);
+          setUsernameError('');
+        }}
+        required
+        className="input-fullwidth"
+      />
+      {usernameError && (
+        <div style={{ color: '#b32e2e', marginBottom: 8, fontSize: '0.97em' }}>
+          {usernameError}
+        </div>
+      )}
 
       <label>Ime:</label>
       <input type="text" value={ime} onChange={(e) => setIme(e.target.value)} required />
@@ -103,7 +140,7 @@ function RegisterForm() {
           aria-label={showPassword ? "Sakrij lozinku" : "Prikaži lozinku"}
         >
           {showPassword ? (
-           // Ikonica otvorenog oka
+            // Ikonica otvorenog oka
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <ellipse cx="12" cy="12" rx="10" ry="7" stroke="#8B1E1E" strokeWidth="2"/>
               <circle cx="12" cy="12" r="3" stroke="#8B1E1E" strokeWidth="2"/>
