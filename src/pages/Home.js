@@ -4,6 +4,8 @@ import { AuthContext } from '../AuthContext';
 import '../styles/index.css';
 import '../styles/Home.css';
 import logo from '../assets/logo.png';
+import mechanicBg from '../assets/mehanika.png'; // Dodaj svoju sliku
+import detailingBg from '../assets/detailing.png'; // Dodaj svoju sliku
 
 function Home() {
   const { user } = useContext(AuthContext);
@@ -23,6 +25,13 @@ function Home() {
       <div className="wave-top"></div>
       {/* HERO SEKCIJA */}
       <section className="hero">
+        <div className="hero-particles">
+          <div className="particle" style={{ left: '12%', top: '80%', animationDelay: '0s' }} />
+          <div className="particle" style={{ left: '70%', top: '90%', animationDelay: '1.2s' }} />
+          <div className="particle" style={{ left: '40%', top: '60%', animationDelay: '2.1s' }} />
+          <div className="particle" style={{ left: '85%', top: '30%', animationDelay: '3.3s' }} />
+          <div className="particle" style={{ left: '25%', top: '20%', animationDelay: '4.5s' }} />
+        </div>
         <img src={logo} alt="Budući Klasici Logo" className="hero-logo" />
         <h1>Dobrodošli u <span className="highlight">Buduće Klasike</span></h1>
         <p>Vaš pouzdani partner za <strong>auto mehaniku</strong> i <strong>detailing</strong></p>
@@ -32,22 +41,26 @@ function Home() {
       {/* USLUGE */}
       <section className="services">
         <h2>Naše usluge</h2>
-        <div className="service-grid">
-          <div className="service-box">
+        <div className="service-grid two-cols">
+          <div
+            className="service-box service-mehanika"
+            onClick={() => navigate('/services')}
+            style={{
+              backgroundImage: `url(${mechanicBg})`
+            }}
+          >
+            <div className="service-overlay"></div>
             <h3>Mehanika</h3>
-            <p>Vršimo sve vrste popravki za klasične i moderne automobile. Kvalitet i pouzdanost su nam na prvom mjestu.</p>
           </div>
-          <div className="service-box">
+          <div
+            className="service-box service-detailing"
+            onClick={() => navigate('/services')}
+            style={{
+              backgroundImage: `url(${detailingBg})`
+            }}
+          >
+            <div className="service-overlay"></div>
             <h3>Detailing</h3>
-            <p>Profesionalno čišćenje, poliranje i zaštita vozila. Vaš automobil će izgledati kao nov!</p>
-          </div>
-          <div className="service-box">
-            <h3>Dijagnostika</h3>
-            <p>Brza i precizna dijagnostika svih sistema na vozilu uz savremenu opremu.</p>
-          </div>
-          <div className="service-box">
-            <h3>Zamjena ulja i filtera</h3>
-            <p>Redovno održavanje za dug životni vijek vašeg motora.</p>
           </div>
         </div>
       </section>
