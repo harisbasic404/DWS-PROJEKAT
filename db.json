@@ -417,20 +417,20 @@
       "slika": "/assets/gtv6.png"
     },
     {
-      "naziv": "test",
-      "godiste": "2025",
-      "cijena": "20",
-      "opis": "hrkljuš",
-      "slika": "https://www.automoli.com/common/vehicles/_assets/img/gallery/f46/mercedes-benz-e-class-w211-facelift-2006.jpg",
-      "id": "fm3yudwal7i"
-    },
-    {
       "naziv": "Audi A4 B6",
       "godiste": "2004",
       "cijena": "5000",
       "opis": "Nov, tek opran",
       "slika": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Audi_A4_B6_%282000%E2%80%932004%29_front_MJ.JPG",
       "id": "xoi3ufog2kk"
+    },
+    {
+      "naziv": "Mercedes Benz w211",
+      "godiste": "2006",
+      "cijena": "14 000",
+      "opis": "Avion",
+      "slika": "https://www.automoli.com/common/vehicles/_assets/img/gallery/f46/mercedes-benz-e-class-w211-facelift-2006.jpg",
+      "id": "k8e38x000j"
     }
   ]
 }
