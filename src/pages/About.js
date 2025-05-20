@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import '../styles/About.css';
+
 import borkoImg from '../assets/borko.png';
 import pendaImg from '../assets/penda.png';
 import aleksaImg from '../assets/aleksa.png';
@@ -54,6 +55,10 @@ function About() {
     return () => {
       observers.forEach(observer => observer.disconnect());
     };
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   return (

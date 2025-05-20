@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 import '../styles/Login.css';
 
 function Login() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [prikaziRegistraciju, setPrikaziRegistraciju] = useState(false);
   const [toast, setToast] = useState('');
 

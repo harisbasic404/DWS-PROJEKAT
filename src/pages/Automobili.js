@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Automobili.css';
 
 function Automobili() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [automobili, setAutomobili] = useState([]);
   const [modalSlika, setModalSlika] = useState(null);
   const navigate = useNavigate();

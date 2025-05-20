@@ -281,6 +281,25 @@
       "datum": "2025-05-19",
       "vrijeme": "10:00",
       "ukupna_cijena": 80
+    },
+    {
+      "korisnik": "gost",
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "odabraneUsluge": [
+        {
+          "id": 13,
+          "kategorija": "Detailing",
+          "naziv": "Detailing motora",
+          "opis": "Sigurno čišćenje motornog prostora bez oštećenja senzora.",
+          "cijena": 70
+        }
+      ],
+      "datum": "2025-05-19",
+      "vrijeme": "13:00",
+      "ukupna_cijena": 70
     }
   ],
   "poruke": [

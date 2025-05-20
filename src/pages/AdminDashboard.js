@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../AuthContext";
 import Sidebar from "../components/admin/Sidebar";
 import UsersManager from "../components/admin/UsersManager";
@@ -10,6 +10,9 @@ import StatsPanel from "../components/admin/StatsPanel";
 import '../styles/AdminDashboard.css';
 
 function AdminDashboard() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { user } = useContext(AuthContext);
   const [activeTab, setActiveTab] = useState('users');
   const [toast, setToast] = useState("");

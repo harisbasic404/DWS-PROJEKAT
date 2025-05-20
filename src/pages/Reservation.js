@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { AuthContext } from '../AuthContext';
 import { TextField, MenuItem, Select, Button, Checkbox, FormControlLabel } from "@mui/material";
 import { DatePicker } from '@mui/x-date-pickers';
@@ -8,6 +8,9 @@ import { format, addHours, setHours, setMinutes } from "date-fns";
 import '../styles/Reservation.css';
 
 function Reservation() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { user } = useContext(AuthContext);
   const [usluge, setUsluge] = useState([]);
   const [forma, setForma] = useState({

@@ -25,6 +25,10 @@ function Services() {
   // Ako je došao sa izabranom uslugom, možeš prikazati info ovdje (opcionalno)
   const izabrana = location.state?.izabranaUsluga;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="services-page-container">
       <h1>Naše usluge</h1>

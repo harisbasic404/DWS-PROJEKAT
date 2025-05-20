@@ -51,7 +51,7 @@ function ServicesManager() {
         <input name="opis" placeholder="Opis" value={form.opis} onChange={handleChange} required />
         <button type="submit">Dodaj</button>
       </form>
-      <table className="admin-table">
+      <table className="admin-table services-table">
         <thead>
           <tr>
             <th>Naziv</th>

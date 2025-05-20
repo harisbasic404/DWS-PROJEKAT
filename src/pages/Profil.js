@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Profil.css';
 
 function Profil() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 

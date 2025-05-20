@@ -75,6 +75,7 @@
   margin-right: 8px;
 }
 
+/* Sve kolone iste širine */
 .admin-table {
   min-width: 1200px;
   table-layout: fixed;
@@ -84,6 +85,7 @@
   margin: 12px 0;
 }
 
+/* Sve ćelije iste širine */
 .admin-table th,
 .admin-table td {
   width: 140px;
@@ -97,15 +99,13 @@
   text-overflow: ellipsis;
 }
 
-/* Omogući prelom teksta za opis/veliki tekst */
+/* Email kolona - bez prelamanja */
 .admin-table th:nth-child(4),
-.admin-table td:nth-child(4),
-.admin-table th:nth-child(6),
-.admin-table td:nth-child(6) {
-  white-space: pre-line !important;
-  overflow: visible !important;
-  text-overflow: unset !important;
-  word-break: break-word !important;
+.admin-table td:nth-child(4) {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 220px;
 }
 
 .admin-table th {
@@ -289,6 +289,52 @@
   border: 1.5px solid #b22222;
   outline: none;
   background: #fff;
+}
+
+/* CarsManager tabela - uža polja */
+.admin-table.cars-table th,
+.admin-table.cars-table td {
+  width: 90px;
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Opis može biti malo širi */
+.admin-table.cars-table th:nth-child(4),
+.admin-table.cars-table td:nth-child(4) {
+  width: 180px;
+  max-width: 220px;
+  white-space: pre-line;
+}
+
+/* ServicesManager tabela - naziv usluge može da se prelama */
+.admin-table.services-table th:nth-child(1),
+.admin-table.services-table td:nth-child(1) {
+  white-space: pre-line !important;
+  word-break: break-word !important;
+  max-width: 180px;
+}
+
+/* Omogući prelamanje teksta u koloni Opis za CarsManager */
+.admin-table.cars-table th:nth-child(4),
+.admin-table.cars-table td:nth-child(4) {
+  white-space: pre-line !important;
+  word-break: break-word !important;
+  max-width: 220px;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Omogući prelamanje teksta u koloni Opis za ServicesManager */
+.admin-table.services-table th:nth-child(4),
+.admin-table.services-table td:nth-child(4) {
+  white-space: pre-line !important;
+  word-break: break-word !important;
+  max-width: 220px;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 @media (max-width: 900px) {

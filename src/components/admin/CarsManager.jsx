@@ -43,7 +43,7 @@ function CarsManager() {
         <button type="submit">Dodaj</button>
       </form>
       <div className="admin-table-wrapper">
-        <table className="admin-table" style={{ textAlign: "center", verticalAlign: "middle", width: "100%" }}>
+        <table className="admin-table cars-table" style={{ textAlign: "center", verticalAlign: "middle", width: "100%" }}>
           <thead>
             <tr>
               <th>Naziv</th><th>Godina</th><th>Cijena</th><th>Opis</th><th>Slika</th><th>Akcija</th>
