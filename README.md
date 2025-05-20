@@ -4,20 +4,123 @@ Web aplikacija za auto servis i detailing.
 
 ---
 
-## Tehnologije
+## Kratki opis teme
 
-- React
-- React Router
-- Material UI (MUI)
-- Express (Node.js backend)
-- CSS
+Aplikacija omogućava korisnicima da rezervišu termin za servisiranje vozila, pošalju upit servisu, pregledaju usluge i automobile, te pristupe svom profilu. Admin korisnici imaju dodatne mogućnosti upravljanja korisnicima, uslugama, automobilima, rezervacijama i porukama.
 
 ---
 
-## Prerequisites
+## Tehnologije korištene u radu
 
-- [Node.js](https://nodejs.org/) (preporučena LTS verzija)
-- [Git](https://git-scm.com/)
+- React (React Router, React Hooks)
+- Material UI (MUI)
+- Express (Node.js backend)
+- CSS
+- date-fns
+- json-server (za razvoj/testiranje)
+- Google Maps (iframe integracija)
+
+---
+
+## Opis strukture projekta
+
+```
+├── 📁 node_modules
+├── 📁 public
+│   └── 📁 assets
+│   └── index.html
+├── 📁 src
+│   ├── 📁 assets
+│   ├── 📁 components
+│   │   ├── 📁 admin
+│   │   │   ├── CarsManager.jsx
+│   │   │   ├── MessagesManager.jsx
+│   │   │   ├── ReservationsManager.jsx
+│   │   │   ├── ServicesManager.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── StatsPanel.jsx
+│   │   │   └── UsersManager.jsx
+│   │   ├── Footer.js
+│   │   ├── Header.js
+│   │   ├── LoginForm.js
+│   │   ├── ProtectedRoute.js
+│   │   └── RegisterForm.js
+│   ├── 📁 pages
+│   │   ├── About.js
+│   │   ├── AdminDashboard.js
+│   │   ├── Automobili.js
+│   │   ├── Contact.js
+│   │   ├── Home.js
+│   │   ├── Login.js
+│   │   ├── Profil.js
+│   │   ├── Reservation.js
+│   │   └── Services.js
+│   ├── 📁 styles
+│   │   ├── About.css
+│   │   ├── AdminDashboard.css
+│   │   ├── Automobili.css
+│   │   ├── Contact.css
+│   │   ├── Footer.css
+│   │   ├── Header.css
+│   │   ├── Home.css
+│   │   ├── index.css
+│   │   ├── Login.css
+│   │   ├── Profil.css
+│   │   ├── Reservation.css
+│   │   └── Services.css
+│   ├── App.js
+│   ├── AuthContext.js
+│   └── index.js
+├── .gitignore
+├── db.json
+├── Dockerfile
+├── package-lock.json
+├── package.json
+├── README.md
+└── server.js
+
+```
+
+---
+
+## Funkcionalnosti i opis dizajna
+
+- Registracija i prijava korisnika (gost/admin)
+- Rezervacija termina za servis i detailing (s validacijom)
+- Kontakt forma (s validacijom, automatsko popunjavanje za prijavljene korisnike)
+- Pregled i filtriranje usluga
+- Pregled automobila (galerija, detalji)
+- Profil korisnika (pregled upita i rezervacija)
+- Admin panel (upravljanje korisnicima, uslugama, automobilima, rezervacijama, porukama)
+- Google Maps prikaz lokacije servisa (iframe)
+- Responsive dizajn
+
+**Paleta boja:**  
+Primarna: #8B1E1E  
+Sekundarna: #FFD700  
+Pozadina: #FFF8F0  
+Kartice: #fff  
+Tekst: #2d1c1c  
+
+**Font:**  
+'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+---
+
+## Uloge korisnika
+
+- **Gost:** Može pregledati usluge, automobile i kontakt podatke.
+- **Registrovani korisnik:** Može rezervisati termin, slati poruke, pregledati svoj profil, upite i rezervacije.
+- **Administrator:** Ima sve mogućnosti kao gost, plus pristup admin panelu za upravljanje korisnicima, uslugama, automobilima, rezervacijama i porukama.
+
+---
+
+## Kratki opis doprinosa svakog člana tima
+
+> Ovdje dopunite imena i zadatke svakog člana tima, npr.:
+> - Borko: Backend (Express server, API rute)
+> - Penda: Frontend (dizajn, forme, responsive)
+> - Aleksa: Rezervacije, validacija, Google Maps
 
 ---
 
@@ -38,42 +141,18 @@ npm install
 
 ### 3. Pokreni backend server
 
-U root folderu pokreni:
-
 ```bash
 node server.js
 ```
-
 - Backend koristi `Express` i čita/piše podatke iz `db.json`.
 - Server će raditi na [http://localhost:3001](http://localhost:3001).
 
 ### 4. Pokreni React aplikaciju (frontend)
 
-U drugom terminalu (takođe u root folderu):
-
 ```bash
 npm start
 ```
-
 - Frontend će biti dostupan na [http://localhost:3000](http://localhost:3000).
-
----
-
-## Funkcionalnosti
-
-- Prikaz i rezervacija usluga (mehanika i detailing)
-- Prikaz tima i kontakt forma
-- Admin panel (za admin korisnike)
-- Upravljanje automobilima i korisnicima (admin)
-- Responsive dizajn
-
----
-
-## Napomene
-
-- **node_modules** i **build** folderi se automatski generišu i nisu dio repozitorija.
-- Svi podaci (korisnici, rezervacije, automobili, usluge) čuvaju se u `db.json` fajlu.
-- Ako želiš resetovati podatke, možeš ručno urediti ili obrisati sadržaj `db.json`.
 
 ---
 
@@ -88,10 +167,18 @@ npm start
 
 ---
 
-## Autor
+## Snimci ekrana radne aplikacije
 
-Haris Bašić
+> Ovdje ubacite slike ekrana najvažnijih stranica:  
+> - Početna stranica  
+> - Prijava/registracija  
+> - Kontakt forma  
+> - Rezervacija termina  
+> - Profil korisnika  
+> - Admin panel  
+> - Responsive prikaz
 
 ---
 
 Ako imaš pitanja ili naiđeš na problem, slobodno otvori issue na GitHub-u!
+

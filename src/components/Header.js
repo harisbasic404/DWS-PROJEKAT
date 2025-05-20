@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom"; // umjesto Link
 import logo from "../assets/logo.png";
 import '../styles/Header.css';
@@ -6,6 +6,7 @@ import { AuthContext } from "../AuthContext";
 
 function Header() {
   const { user } = useContext(AuthContext);
+  const [menuOpen, setMenuOpen] = useState(false); // Dodaj state
 
   // Tabovi za sve korisnike
   const commonLinks = [
@@ -41,7 +42,28 @@ function Header() {
           <img src={logo} alt="Logo" className="header-logo" />
           <span className="logo-text">Budući Klasici</span>
         </div>
-        <ul className="nav-list">
+        {/* Overlay za zatvaranje menija */}
+        {menuOpen && (
+          <div
+            className="nav-overlay"
+            onClick={() => setMenuOpen(false)}
+            tabIndex={-1}
+          />
+        )}
+        {/* Burger dugme */}
+        <div
+          className={`burger${menuOpen ? " open" : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Otvori meni"
+          tabIndex={0}
+          role="button"
+        >
+          <span />
+          <span />
+          <span />
+        </div>
+        {/* Navigacija */}
+        <ul className={`nav-list${menuOpen ? " open" : ""}`}>
           {navLinks.map((link) => (
             <li key={link.to}>
               <NavLink
@@ -49,7 +71,8 @@ function Header() {
                 className={({ isActive }) =>
                   "nav-link" + (isActive ? " active" : "")
                 }
-                end={link.to === "/"} // da samo Početna bude aktivna na /
+                end={link.to === "/"}
+                onClick={() => setMenuOpen(false)}
               >
                 {link.label}
               </NavLink>

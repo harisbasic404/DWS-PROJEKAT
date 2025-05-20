@@ -21,31 +21,14 @@
       "telefon": "+38762123456"
     },
     {
-      "username": "haris.basic",
-      "ime": "haris",
-      "prezime": "basic",
-      "email": "harisbasic@gmail.com",
-      "password": "Haris1234",
-      "telefon": "+3870644468969",
-      "role": "guest"
-    },
-    {
-      "username": "harambasa",
+      "username": "harisbasic404",
       "ime": "skibidi",
       "prezime": "toilet",
-      "email": "harambasa@gmail.com",
-      "password": "Harambasa1234",
-      "telefon": "91865016",
-      "role": "guest"
-    },
-    {
-      "username": "vija",
-      "ime": "adnan",
-      "prezime": "jasarevic",
-      "email": "vija@gmail.com",
-      "password": "Vija12345",
-      "telefon": "0522780242",
-      "role": "guest"
+      "email": "haris@gmail.com",
+      "telefon": "0644468969",
+      "password": "Haris1234",
+      "role": "guest",
+      "id": "y0mlk25o4z"
     }
   ],
   "rezervacije": [
@@ -57,249 +40,17 @@
       "telefon": "+38761123456",
       "odabraneUsluge": [
         {
-          "id": 1,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Mali servis",
-          "opis": "Zamjena ulja, uljnog filtera i osnovna provjera stanja vozila.",
-          "cijena": 100
-        }
-      ],
-      "datum": "2025-05-18",
-      "vrijeme": "08:00",
-      "ukupna_cijena": 100
-    },
-    {
-      "korisnik": "admin",
-      "ime": "Admin",
-      "prezime": "Administrator",
-      "email": "admin@gmail.com",
-      "telefon": "+38761123456",
-      "odabraneUsluge": [
-        {
-          "id": 1,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Mali servis",
-          "opis": "Zamjena ulja, uljnog filtera i osnovna provjera stanja vozila.",
-          "cijena": 100
-        },
-        {
-          "id": 6,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Popravak alternatora ili anlasera",
-          "opis": "Demontaža, čišćenje, zamjena četkica ili kompleta (ako isplativo).",
-          "cijena": 80
-        },
-        {
-          "id": 8,
-          "kategorija": "Detailing",
-          "naziv": "Vanjsko pranje",
-          "opis": "Temeljno pranje eksterijera i felgi.",
-          "cijena": 50
-        },
-        {
-          "id": 7,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Zamjena ulja u mjenjaču (manualni/automatski)",
-          "opis": "Sa filterom i ispiranjem sistema ako je potrebno.",
-          "cijena": 120
-        },
-        {
-          "id": 5,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Dijagnostika motora (OBD skener)",
-          "opis": "Brzo očitavanje grešaka na motoru, mjenjaču i drugim sistemima.",
-          "cijena": 40
-        },
-        {
-          "id": 4,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Zamjena zupčastog remena",
-          "opis": "Uključuje vodenu pumpu i natezače (ovisno o modelu).",
-          "cijena": 250
-        },
-        {
-          "id": 3,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Zamjena kočionih pločica",
-          "opis": "Prednje i/ili zadnje pločice, provjera diska i sistema.",
-          "cijena": 80
-        },
-        {
-          "id": 2,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Veliki servis",
-          "opis": "Zamjena svih filtera, ulja, svjećica, pregled kočnica i trapa.",
-          "cijena": 200
-        },
-        {
-          "id": 9,
-          "kategorija": "Detailing",
-          "naziv": "Unutrašnje čišćenje i usisavanje",
-          "opis": "Usisavanje, čišćenje plastika i stakala, dezinfekcija.",
-          "cijena": 60
-        },
-        {
-          "id": 10,
-          "kategorija": "Detailing",
-          "naziv": "Dubinsko čišćenje sjedišta i poda",
-          "opis": "Parno čišćenje i ekstrakcija nečistoća iz tapacirunga.",
-          "cijena": 100
-        },
-        {
-          "id": 11,
-          "kategorija": "Detailing",
-          "naziv": "Poliranje karoserije (jednoslojno)",
-          "opis": "Uklanjanje sitnih ogrebotina i povrat sjaja.",
-          "cijena": 150
-        },
-        {
-          "id": 12,
-          "kategorija": "Detailing",
-          "naziv": "Keramička zaštita laka (do 12 mjeseci)",
-          "opis": "Zaštita karoserije od prljavštine, UV zraka i ogrebotina.",
-          "cijena": 300
-        },
-        {
           "id": 13,
           "kategorija": "Detailing",
           "naziv": "Detailing motora",
           "opis": "Sigurno čišćenje motornog prostora bez oštećenja senzora.",
           "cijena": 70
-        },
-        {
-          "id": 14,
-          "kategorija": "Detailing",
-          "naziv": "Čišćenje i dezinfekcija klime (ozon)",
-          "opis": "Uklanja neugodne mirise i bakterije iz ventilacije.",
-          "cijena": 50
         }
       ],
-      "datum": "2025-05-18",
-      "vrijeme": "12:00",
-      "ukupna_cijena": 1650
-    },
-    {
-      "korisnik": "vija",
-      "ime": "adnan",
-      "prezime": "jasarevic",
-      "email": "vija@gmail.com",
-      "telefon": "0522780242",
-      "odabraneUsluge": [
-        {
-          "id": 8,
-          "kategorija": "Detailing",
-          "naziv": "Vanjsko pranje",
-          "opis": "Temeljno pranje eksterijera i felgi.",
-          "cijena": 50
-        },
-        {
-          "id": 6,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Popravak alternatora ili anlasera",
-          "opis": "Demontaža, čišćenje, zamjena četkica ili kompleta (ako isplativo).",
-          "cijena": 80
-        },
-        {
-          "id": 10,
-          "kategorija": "Detailing",
-          "naziv": "Dubinsko čišćenje sjedišta i poda",
-          "opis": "Parno čišćenje i ekstrakcija nečistoća iz tapacirunga.",
-          "cijena": 100
-        }
-      ],
-      "datum": "2025-05-18",
+      "datum": "2025-05-20",
       "vrijeme": "13:00",
-      "ukupna_cijena": 230
-    },
-    {
-      "korisnik": "vija",
-      "ime": "adnan",
-      "prezime": "jasarevic",
-      "email": "vija@gmail.com",
-      "telefon": "0522780242",
-      "odabraneUsluge": [
-        {
-          "id": 7,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Zamjena ulja u mjenjaču (manualni/automatski)",
-          "opis": "Sa filterom i ispiranjem sistema ako je potrebno.",
-          "cijena": 120
-        },
-        {
-          "id": 8,
-          "kategorija": "Detailing",
-          "naziv": "Vanjsko pranje",
-          "opis": "Temeljno pranje eksterijera i felgi.",
-          "cijena": 50
-        },
-        {
-          "id": 9,
-          "kategorija": "Detailing",
-          "naziv": "Unutrašnje čišćenje i usisavanje",
-          "opis": "Usisavanje, čišćenje plastika i stakala, dezinfekcija.",
-          "cijena": 60
-        }
-      ],
-      "datum": "2025-05-18",
-      "vrijeme": "09:00",
-      "ukupna_cijena": 230
-    },
-    {
-      "korisnik": "vija",
-      "ime": "adnan",
-      "prezime": "jasarevic",
-      "email": "vija@gmail.com",
-      "telefon": "0522780242",
-      "odabraneUsluge": [
-        {
-          "id": 13,
-          "kategorija": "Detailing",
-          "naziv": "Detailing motora",
-          "opis": "Sigurno čišćenje motornog prostora bez oštećenja senzora.",
-          "cijena": 70
-        }
-      ],
-      "datum": "2025-05-19",
-      "vrijeme": "08:00",
-      "ukupna_cijena": 70
-    },
-    {
-      "korisnik": "vija",
-      "ime": "adnan",
-      "prezime": "jasarevic",
-      "email": "vija@gmail.com",
-      "telefon": "0522780242",
-      "odabraneUsluge": [
-        {
-          "id": 6,
-          "kategorija": "Mehaničke usluge",
-          "naziv": "Popravak alternatora ili anlasera",
-          "opis": "Demontaža, čišćenje, zamjena četkica ili kompleta (ako isplativo).",
-          "cijena": 80
-        }
-      ],
-      "datum": "2025-05-19",
-      "vrijeme": "10:00",
-      "ukupna_cijena": 80
-    },
-    {
-      "korisnik": "gost",
-      "ime": "Gost",
-      "prezime": "Gostović",
-      "email": "gost@gmail.com",
-      "telefon": "+38762123456",
-      "odabraneUsluge": [
-        {
-          "id": 13,
-          "kategorija": "Detailing",
-          "naziv": "Detailing motora",
-          "opis": "Sigurno čišćenje motornog prostora bez oštećenja senzora.",
-          "cijena": 70
-        }
-      ],
-      "datum": "2025-05-19",
-      "vrijeme": "13:00",
-      "ukupna_cijena": 70
+      "ukupna_cijena": 70,
+      "id": "c0memfn2rwp"
     }
   ],
   "poruke": [
@@ -312,66 +63,6 @@
       "poruka": "test\n",
       "datum": "2025-05-15T18:17:20.379Z",
       "id": "mapoz6rj"
-    },
-    {
-      "ime": "haris",
-      "prezime": "basic",
-      "email": "harisbasic@gmail.com",
-      "telefon": "+3870644468969",
-      "korisnik": "haris.basic",
-      "poruka": "do kad radite\n",
-      "datum": "2025-05-15T19:53:40.803Z",
-      "id": "mapsf2yn"
-    },
-    {
-      "ime": "haris",
-      "prezime": "basic",
-      "email": "harisbasic@gmail.com",
-      "telefon": "+3870644468969",
-      "korisnik": "haris.basic",
-      "poruka": "test",
-      "datum": "2025-05-15T22:00:26.237Z",
-      "id": "mapwy3dl"
-    },
-    {
-      "ime": "Gost",
-      "prezime": "Gostović",
-      "email": "gost@gmail.com",
-      "telefon": "+38762123456",
-      "korisnik": "gost",
-      "poruka": "opet test",
-      "datum": "2025-05-16T06:48:41.637Z",
-      "id": "maqftfoh"
-    },
-    {
-      "ime": "Gost",
-      "prezime": "Gostović",
-      "email": "gost@gmail.com",
-      "telefon": "+38762123456",
-      "korisnik": "gost",
-      "poruka": "test",
-      "datum": "2025-05-16T09:11:42.119Z",
-      "id": "maqkxcff"
-    },
-    {
-      "ime": "Gost",
-      "prezime": "Gostović",
-      "email": "gost@gmail.com",
-      "telefon": "+38762123456",
-      "korisnik": "gost",
-      "poruka": "jesul zdravi pragovi kod mercedesa",
-      "datum": "2025-05-16T10:36:56.490Z",
-      "id": "maqnyyp7"
-    },
-    {
-      "ime": "adnan",
-      "prezime": "jasarevic",
-      "email": "vija@gmail.com",
-      "telefon": "0522780242",
-      "korisnik": "vija",
-      "poruka": "jestel se umorili",
-      "datum": "2025-05-19T17:57:11.668Z",
-      "id": "mave0os6"
     }
   ],
   "servisneUsluge": [
@@ -499,14 +190,6 @@
       "cijena": 60000,
       "opis": "Jedan od najpoznatijih sportskih automobila iz 80-ih, ikona DTM trka.",
       "slika": "/assets/e30.png"
-    },
-    {
-      "id": "a2",
-      "naziv": "Toyota Supra MK4",
-      "godiste": 1996,
-      "cijena": 85000,
-      "opis": "Model s legendarnim 2JZ motorom, omiljen u tuning zajednici.",
-      "slika": "/assets/supra.png"
     },
     {
       "id": "a3",

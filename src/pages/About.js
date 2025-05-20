@@ -7,21 +7,21 @@ import aleksaImg from '../assets/aleksa.png';
 
 const team = [
   {
-    name: "Borko",
+    name: "Haris",
     role: "Vlasnik & ekspert za mehaniku",
     img: borkoImg,
     desc: "Osnivač servisa i glavni mehaničar. Više od 15 godina iskustva u popravci i restauraciji automobila. Strastven, precizan i uvijek spreman pomoći svakom klijentu.",
     direction: "left"
   },
   {
-    name: "Penda",
+    name: "Kenan",
     role: "Detailing & čišćenje",
     img: pendaImg,
     desc: "Zadužen za čišćenje i davanje sjaja automobilima. Svako vozilo nakon njegovih ruku izgleda kao iz salona. Perfekcionista u svakom detalju.",
     direction: "right"
   },
   {
-    name: "Aleksa",
+    name: "Hamza",
     role: "Mehaničar",
     img: aleksaImg,
     desc: "Specijalista za mehaniku i održavanje. Pouzdan, temeljit i uvijek spreman da pronađe rješenje za svaki tehnički izazov.",

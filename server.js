@@ -23,7 +23,9 @@ app.post('/rezervacije', (req, res) => {
     return res.status(409).json({ poruka: 'Odabrani termin je već zauzet.' });
   }
 
-  // Dodaj i spremi
+  // DODAJ OVO:
+  novaRezervacija.id = Math.random().toString(36).slice(2);
+
   rezervacije.push(novaRezervacija);
   db.rezervacije = rezervacije;
   fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf8');

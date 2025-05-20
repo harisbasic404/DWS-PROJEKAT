@@ -39,7 +39,7 @@ function ReservationsManager() {
               <tr key={attr.key}>
                 <th style={{ textAlign: "left", background: "#f8eaea" }}>{attr.label}</th>
                 {rezervacije.map((r, idx) => (
-                  <td key={r.id ? r.id + attr.key : idx + attr.key}>
+                  <td key={attr.key + '-' + (r.id ?? idx)}>
                     {attr.key === "odabraneUsluge"
                       ? (Array.isArray(r.odabraneUsluge) && r.odabraneUsluge.length > 0
                           ? r.odabraneUsluge.map((u, i) => <div key={i}>{u.naziv}</div>)

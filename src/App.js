@@ -13,6 +13,7 @@ import Profil from './pages/Profil';
 import Services from './pages/Services';
 import { AuthContext } from './AuthContext';
 import Automobili from './pages/Automobili';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const { user, logout } = useContext(AuthContext);
@@ -38,6 +39,7 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
         </Routes>
       </main>
+      <ScrollToTop />
       <Footer />
     </Router>
   );

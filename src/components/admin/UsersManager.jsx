@@ -64,8 +64,8 @@ function UsersManager() {
             {atributi.map(attr => (
               <tr key={attr.key}>
                 <th style={{ textAlign: "left", background: "#f8eaea" }}>{attr.label}</th>
-                {users.map(u => (
-                  <td key={u.id + attr.key}>
+                {users.map((u, idx) => (
+                  <td key={attr.key + '-' + (u.id ?? idx)}>
                     {attr.key === "akcija"
                       ? <button className="admin-delete-btn" onClick={() => handleDeleteUser(u.id)}>
                           🗑

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 function RegisterForm({ setToast, onSuccess }) {
   const [ime, setIme] = useState('');
@@ -116,11 +118,16 @@ function RegisterForm({ setToast, onSuccess }) {
       <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
       <label>Telefon:</label>
-      <input
-        type="tel"
+      <PhoneInput
+        country={'ba'} // default BiH, možeš promijeniti
         value={telefon}
-        onChange={(e) => setTelefon(e.target.value)}
-        required
+        onChange={phone => setTelefon(phone)}
+        inputProps={{
+          name: 'telefon',
+          required: true,
+          autoFocus: false
+        }}
+        inputStyle={{ width: '100%' }}
       />
 
       <label>Lozinka:</label>

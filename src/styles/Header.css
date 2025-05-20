@@ -65,6 +65,36 @@
   box-shadow: 0 1px 4px #FFD70022;
 }
 
+/* Burger dugme */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin-left: 16px;
+  z-index: 120;
+}
+.burger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #FFD700;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.burger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Responsive: logo i naziv centrirani, linkovi ispod */
 @media (max-width: 700px) {
   .header-nav {
@@ -99,5 +129,59 @@
 
   .nav-link {
     padding: 6px 12px;
+  }
+}
+
+/* Responsive meni */
+@media (max-width: 700px) {
+  .burger {
+    display: flex;
+    z-index: 120;
+  }
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 75vw;
+    max-width: 320px;
+    background: #8B1E1E;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly; /* Rasporedi ravnomjerno */
+    padding: 32px 0 32px 0; /* Gore i dole padding */
+    border-radius: 0 12px 12px 0;
+    box-shadow: 2px 0 16px #0004;
+    display: none;
+    z-index: 110;
+    margin: 0;
+    gap: 0; /* Ukloni gap, koristi space-between */
+  }
+  .nav-list.open {
+    display: flex;
+  }
+  .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: 24px 40px;      /* Povećaj padding za šire kartice */
+    border-radius: 0;
+    font-size: 1.3rem;       /* Veći font */
+    font-weight: 700;        /* Podebljaj tekst */
+    border-bottom: 1px solid #FFD70022;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+  }
+}
+
+/* Overlay za meni */
+@media (max-width: 700px) {
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.35);
+    z-index: 109;
   }
 }
