@@ -1,10 +1,13 @@
+// Uvoz React hook-ova i CSS-a za stilizaciju About stranice
 import React, { useRef, useEffect, useState } from 'react';
 import '../styles/About.css';
 
+// Uvoz slika članova tima
 import borkoImg from '../assets/borko.png';
 import pendaImg from '../assets/penda.png';
 import aleksaImg from '../assets/aleksa.png';
 
+// Definicija članova tima sa podacima i slikama
 const team = [
   {
     name: "Haris",
@@ -30,10 +33,11 @@ const team = [
 ];
 
 function About() {
-  // Kreiraj refove i stanja za svaki član
+  // Kreira refove i stanje za animaciju članova tima pri scrollu
   const refs = useRef(team.map(() => React.createRef()));
   const [inViews, setInViews] = useState(team.map(() => false));
 
+  // Intersection Observer za animaciju članova tima kada uđu u viewport
   useEffect(() => {
     const observers = refs.current.map((ref, idx) => {
       return new window.IntersectionObserver(
@@ -52,17 +56,20 @@ function About() {
       if (ref.current) observers[idx].observe(ref.current);
     });
 
+    // Čisti observatore pri unmountu
     return () => {
       observers.forEach(observer => observer.disconnect());
     };
   }, []);
 
+  // Scroll na vrh stranice pri otvaranju About stranice
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="about-nobox">
+      {/* Opis firme i misije */}
       <h1 className="about-title">O nama</h1>
       <p>
         <strong>Budući Klasici</strong> je tim zaljubljenika u automobile, mehaniku i detailing. Naša misija je da svaki automobil, bez obzira na godine, zablista kao nov i da vlasnici budu sigurni u njegovu pouzdanost.
@@ -77,6 +84,7 @@ function About() {
         <strong>Vaš auto, naša briga – Budući Klasici.</strong>
       </p>
 
+      {/* Prikaz članova tima sa animacijom */}
       <h2 className="team-title">Naš tim</h2>
       <div className="team-list">
         {team.map((member, idx) => (

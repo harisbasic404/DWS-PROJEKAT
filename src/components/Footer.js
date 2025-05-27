@@ -10,6 +10,7 @@ function Footer() {
   return (
     <footer className="footer-main">
       <div className="footer-content">
+        {/* Informacije o firmi, kontakt i radno vrijeme */}
         <div className="footer-info">
           <h3>Budući Klasici</h3>
           <p className="footer-moto">Vaš auto, naša briga – mehanika i detailing na jednom mjestu!</p>
@@ -25,9 +26,11 @@ function Footer() {
             Subota: 09:00 - 14:00<br />
             Nedjelja: Zatvoreno
           </p>
+          {/* Dugme za brzo pozivanje */}
           <a href="tel:+38761123456" className="footer-cta-btn">Pozovi odmah</a>
           {/* <a href="/profil" className="footer-cta-btn">Profil</a> */}
         </div>
+        {/* Google mapa sa lokacijom firme */}
         <div className="footer-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4045.091068350559!2d17.911548151519266!3d44.20065402692949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ee238fb53d32f%3A0xf3e11869aa28a8ad!2sSTRONG%20AUTO!5e0!3m2!1shr!2sba!4v1747247084594!5m2!1shr!2sba"
@@ -40,6 +43,7 @@ function Footer() {
             title="Lokacija"
           ></iframe>
         </div>
+        {/* Društvene mreže i linkovi */}
         <div className="footer-social">
           <h4>Pratite nas:</h4>
           <div className="social-icons">
@@ -58,9 +62,11 @@ function Footer() {
           </div>
         </div>
       </div>
+      {/* Donji dio footera sa autorskim pravima */}
       <div className="footer-bottom">
         <span>&copy; 2025 Budući Klasici. Sva prava zadržana.</span>
       </div>
+      {/* Dekorativni watermark automobila */}
       <img
         src={carIcon}
         alt="Car watermark"

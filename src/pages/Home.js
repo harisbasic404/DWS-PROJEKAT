@@ -4,13 +4,15 @@ import { AuthContext } from '../AuthContext';
 import '../styles/index.css';
 import '../styles/Home.css';
 import logo from '../assets/logo.png';
-import mechanicBg from '../assets/mehanika.png'; // Dodaj svoju sliku
-import detailingBg from '../assets/detailing.png'; // Dodaj svoju sliku
+import mechanicBg from '../assets/mehanika.png';
+import detailingBg from '../assets/detailing.png';
 
 function Home() {
+  // Dohvatanje korisnika i navigacije
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  // Funkcija za klik na CTA dugme - vodi na rezervaciju ili login
   const handleClick = () => {
     if (user) {
       navigate('/reservation');
@@ -20,6 +22,7 @@ function Home() {
     }
   };
 
+  // Scroll na vrh stranice pri otvaranju
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,7 +30,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="wave-top"></div>
-      {/* HERO SEKCIJA */}
+      {/* HERO SEKCIJA - naslov, logo i CTA dugme */}
       <section className="hero">
         <div className="hero-particles">
           <div className="particle" style={{ left: '12%', top: '80%', animationDelay: '0s' }} />
@@ -42,7 +45,7 @@ function Home() {
         <button className="cta-button" onClick={handleClick}>Zakažite termin</button>
       </section>
 
-      {/* USLUGE */}
+      {/* SEKCIJA USLUGA - prikaz osnovnih usluga */}
       <section className="services">
         <h2>Naše usluge</h2>
         <div className="service-grid two-cols">
@@ -69,7 +72,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ZAŠTO IZABRATI NAS */}
+      {/* ZAŠTO IZABRATI NAS - istaknute prednosti */}
       <section className="why-us">
         <h2>Zašto izabrati nas?</h2>
         <div className="why-grid">
@@ -92,7 +95,7 @@ function Home() {
         </div>
       </section>
 
-      {/* RECENZIJE */}
+      {/* RECENZIJE KLIJENATA */}
       <section className="reviews">
         <h2>Šta kažu naši klijenti?</h2>
         <div className="review-grid">
@@ -111,7 +114,7 @@ function Home() {
         </div>
       </section>
 
-      {/* YOUTUBE SEKCIJA */}
+      {/* YOUTUBE SEKCIJA - video i link na kanal */}
       <section className="yt-section">
         <h2>Pogledajte nas u akciji</h2>
         <div className="yt-video-wrapper">

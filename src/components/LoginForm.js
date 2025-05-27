@@ -3,15 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthContext';
 
 function LoginForm() {
+  // Stanja za unos korisnika, lozinku, poruke i prikaz lozinke
   const [userInput, setUserInput] = useState(''); // Može biti email ili username
   const [password, setPassword] = useState('');
   const [poruka, setPoruka] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [toast, setToast] = useState('');
 
+  // Dohvatanje login funkcije iz AuthContext-a i navigacije
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  // Funkcija za slanje forme i autentikaciju korisnika
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -40,6 +43,7 @@ function LoginForm() {
 
       const korisnik = await res.json();
 
+      // Poziva login funkciju iz konteksta i sprema korisnika u localStorage
       login(korisnik);
 
       localStorage.setItem('ulogovaniKorisnik', JSON.stringify({
@@ -51,6 +55,7 @@ function LoginForm() {
         telefon: korisnik.telefon
       }));
 
+      // Preusmjerava korisnika na admin ili rezervaciju, zavisno od uloge
       if (korisnik.role === 'admin') navigate('/admin');
       else navigate('/reservation');
 
@@ -60,6 +65,7 @@ function LoginForm() {
     }
   };
 
+  // Automatsko uklanjanje toast poruke nakon 3 sekunde
   useEffect(() => {
     if (toast) {
       const timer = setTimeout(() => setToast(''), 3000);
@@ -71,6 +77,7 @@ function LoginForm() {
     <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
       <h2>Prijava</h2>
 
+      {/* Polje za unos emaila ili korisničkog imena */}
       <label>Email ili korisničko ime:</label>
       <input
         type="text"
@@ -80,6 +87,7 @@ function LoginForm() {
         className="input-fullwidth"
       />
 
+      {/* Polje za unos lozinke sa opcijom prikaza/sakrivanja */}
       <label>Lozinka:</label>
       <div className="password-field">
         <input
@@ -113,7 +121,9 @@ function LoginForm() {
         </button>
       </div>
 
+      {/* Dugme za prijavu */}
       <button type="submit">Prijavi se</button>
+      {/* Prikaz poruke o grešci ili statusu */}
       {poruka && <p style={{ color: 'red' }}>{poruka}</p>}
     </form>
   );

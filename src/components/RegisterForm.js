@@ -3,6 +3,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
 function RegisterForm({ setToast, onSuccess }) {
+  // Stanja za sva polja forme i poruke
   const [ime, setIme] = useState('');
   const [prezime, setPrezime] = useState('');
   const [email, setEmail] = useState('');
@@ -11,15 +12,18 @@ function RegisterForm({ setToast, onSuccess }) {
   const [password, setPassword] = useState('');
   const [poruka, setPoruka] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [usernameError, setUsernameError] = useState(''); // Dodano
+  const [usernameError, setUsernameError] = useState('');
 
+  // Tekst za pomoć oko lozinke
   const passwordHelp = "Lozinka mora imati najmanje 8 karaktera, veliko i malo slovo i broj.";
 
+  // Funkcija za slanje forme i validaciju podataka
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPoruka('');
     setUsernameError('');
 
+    // Validacija obaveznih polja
     if (!email || !password || !ime || !prezime || !telefon || !username) {
       setPoruka('Sva polja su obavezna.');
       return;
@@ -52,6 +56,7 @@ function RegisterForm({ setToast, onSuccess }) {
       return;
     }
 
+    // Priprema objekta korisnika za slanje na backend
     const noviKorisnik = {
       username,
       ime,
@@ -62,6 +67,7 @@ function RegisterForm({ setToast, onSuccess }) {
       role: 'guest'
     };
 
+    // Slanje zahtjeva za registraciju na backend
     try {
       const res = await fetch('http://localhost:3001/users', {
         method: 'POST',
@@ -91,6 +97,7 @@ function RegisterForm({ setToast, onSuccess }) {
     <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
       <h2>Registracija</h2>
 
+      {/* Polje za korisničko ime */}
       <label>Korisničko ime:</label>
       <input
         type="text"
@@ -102,12 +109,14 @@ function RegisterForm({ setToast, onSuccess }) {
         required
         className="input-fullwidth"
       />
+      {/* Prikaz greške za korisničko ime */}
       {usernameError && (
         <div style={{ color: '#b32e2e', marginBottom: 8, fontSize: '0.97em' }}>
           {usernameError}
         </div>
       )}
 
+      {/* Polja za ime, prezime i email */}
       <label>Ime:</label>
       <input type="text" value={ime} onChange={(e) => setIme(e.target.value)} required />
 
@@ -117,9 +126,10 @@ function RegisterForm({ setToast, onSuccess }) {
       <label>Email:</label>
       <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
+      {/* Polje za telefon sa PhoneInput komponentom */}
       <label>Telefon:</label>
       <PhoneInput
-        country={'ba'} // default BiH, možeš promijeniti
+        country={'ba'} // default BiH
         value={telefon}
         onChange={phone => setTelefon(phone)}
         inputProps={{
@@ -130,6 +140,7 @@ function RegisterForm({ setToast, onSuccess }) {
         inputStyle={{ width: '100%' }}
       />
 
+      {/* Polje za lozinku sa opcijom prikaza/sakrivanja */}
       <label>Lozinka:</label>
       <div className="password-field">
         <input
@@ -164,7 +175,9 @@ function RegisterForm({ setToast, onSuccess }) {
       </div>
       <small style={{ color: "#8B1E1E" }}>{passwordHelp}</small>
 
+      {/* Dugme za registraciju */}
       <button type="submit">Registruj se</button>
+      {/* Prikaz poruke o grešci ili statusu */}
       {poruka && <p style={{ color: 'red' }}>{poruka}</p>}
     </form>
   );

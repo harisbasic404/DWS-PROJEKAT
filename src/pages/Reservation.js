@@ -8,10 +8,15 @@ import { format, addHours, setHours, setMinutes } from "date-fns";
 import '../styles/Reservation.css';
 
 function Reservation() {
+  // Scroll na vrh stranice pri otvaranju
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Dohvatanje korisnika iz AuthContext-a
   const { user } = useContext(AuthContext);
+
+  // Stanja za usluge, formu, toast poruku i zauzete termine
   const [usluge, setUsluge] = useState([]);
   const [forma, setForma] = useState({
     ime: user?.ime || '',
@@ -26,12 +31,14 @@ function Reservation() {
   const [toast, setToast] = useState('');
   const [zauzetiTermini, setZauzetiTermini] = useState([]);
 
+  // Dohvatanje servisnih usluga sa servera pri prvom renderu
   useEffect(() => {
     fetch('http://localhost:3001/servisneUsluge')
       .then(res => res.json())
       .then(data => setUsluge(data));
   }, []);
 
+  // Popunjavanje forme podacima korisnika ako je prijavljen
   useEffect(() => {
     if (user) {
       setForma(f => ({
@@ -44,6 +51,7 @@ function Reservation() {
     }
   }, [user]);
 
+  // Dohvatanje zauzetih termina za odabrani datum
   useEffect(() => {
     if (forma.datum) {
       fetch("http://localhost:3001/rezervacije")
@@ -55,7 +63,7 @@ function Reservation() {
             const rDatum = r.datum.length > 10 ? r.datum.slice(0, 10) : r.datum;
             return rDatum === dan;
           });
-          // Ovdje formatiraj vrijeme na "HH:mm"
+          // Formatira vrijeme na "HH:mm"
           setZauzetiTermini(zauzeti.map(r => {
             if (!r.vrijeme) return "";
             const [h, m] = r.vrijeme.split(':');
@@ -68,10 +76,12 @@ function Reservation() {
     }
   }, [forma.datum]);
 
+  // Ažuriranje forme pri promjeni inputa
   const handleChange = (e) => {
     setForma({ ...forma, [e.target.name]: e.target.value });
   };
 
+  // Dodavanje ili uklanjanje usluge iz forme i izračun ukupne cijene
   const handleServiceChange = (usluga, checked) => {
     let updatedUsluge = [...forma.odabraneUsluge];
     if (checked) {
@@ -87,6 +97,7 @@ function Reservation() {
     });
   };
 
+  // Slanje forme - validacija i POST zahtjev na backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { ime, prezime, email, telefon, odabraneUsluge, datum, vrijeme } = forma;
@@ -134,6 +145,7 @@ function Reservation() {
     }
   };
 
+  // Ako korisnik nije prijavljen, prikazuje poruku i dugme za login
   if (!user) {
     return (
       <div className="reservation-page-container">
@@ -148,11 +160,13 @@ function Reservation() {
     );
   }
 
+  // Prikaz forme za rezervaciju termina i usluga
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <div className="reservation-page">
         <form className="reservation-form" onSubmit={handleSubmit}>
           <p>Korisnik: {user.username}</p>
+          {/* Polja za unos podataka */}
           <TextField
             type="text"
             name="ime"
@@ -190,6 +204,7 @@ function Reservation() {
             margin="normal"
           />
 
+          {/* Prikaz svih dostupnih usluga sa cijenama */}
           <h3>Odaberite usluge:</h3>
           {usluge.map((usluga) => (
             <FormControlLabel
@@ -205,6 +220,7 @@ function Reservation() {
             />
           ))}
 
+          {/* Odabir datuma rezervacije */}
           <DatePicker
             name="datum"
             label="Datum"
@@ -220,6 +236,7 @@ function Reservation() {
             renderInput={(params) => <TextField {...params} fullWidth margin="normal" />}
           />
 
+          {/* Odabir vremena rezervacije, prikazuje samo slobodne termine */}
           <Select
             name="vrijeme"
             label="Vrijeme"
@@ -256,18 +273,22 @@ function Reservation() {
             })}
           </Select>
 
+          {/* Prikaz ukupne cijene odabranih usluga */}
           <p>Ukupna cijena: {forma.ukupnaCijena} KM</p>
 
+          {/* Dugme za slanje rezervacije */}
           <Button type="submit" variant="contained" color="primary" fullWidth>
             Pošaljite rezervaciju
           </Button>
         </form>
+        {/* Prikaz toast poruke nakon uspješnog slanja */}
         {toast && <div className="toast">{toast}</div>}
       </div>
     </LocalizationProvider>
   );
 }
 
+// Funkcija za generisanje termina na osnovu dana u sedmici
 function getTerminiZaDan(datum) {
   if (!datum) return [];
   const danUSedmici = datum.getDay(); // 0 = Nedjelja, 1 = Ponedjeljak, ..., 6 = Subota

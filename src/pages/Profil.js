@@ -4,18 +4,24 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Profil.css';
 
 function Profil() {
+  // Scroll na vrh stranice pri otvaranju
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Dohvatanje korisnika i logout funkcije iz AuthContext-a
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  // Stanja za korisničke upite, rezervacije i aktivni tab
   const [upiti, setUpiti] = useState([]);
   const [rezervacije, setRezervacije] = useState([]);
   const [tab, setTab] = useState('upiti');
 
+  // Dohvatanje korisničkih upita i rezervacija sa servera pri promjeni korisnika
   useEffect(() => {
     if (user) {
+      // Filtrira poruke koje pripadaju prijavljenom korisniku
       fetch('http://localhost:3001/poruke')
         .then(res => res.json())
         .then(data => {
@@ -27,6 +33,7 @@ function Profil() {
           setUpiti(filtrirane);
         });
 
+      // Filtrira rezervacije koje pripadaju prijavljenom korisniku
       fetch('http://localhost:3001/rezervacije')
         .then(res => res.json())
         .then(data => {
@@ -41,18 +48,22 @@ function Profil() {
     }
   }, [user]);
 
+  // Funkcija za odjavu korisnika
   const handleLogout = () => {
     logout();
     navigate('/login'); // ili '/'
   };
 
+  // Ako korisnik nije prijavljen, prikazuje poruku
   if (!user) {
     return <div className="profile-container">Morate biti prijavljeni da biste vidjeli profil.</div>;
   }
 
+  // Prikaz profila, tabova i korisničkih podataka
   return (
     <div className="profile-page-bg">
       <div className="profile-grid">
+        {/* Glavni podaci o korisniku i dugme za odjavu */}
         <section className="profile-main profile-box">
           <h2>Profil korisnika</h2>
           <p><strong>Korisničko ime:</strong> {user.username}</p>
@@ -62,6 +73,7 @@ function Profil() {
           <p><strong>Telefon:</strong> {user.telefon}</p>
           <button onClick={handleLogout} className="footer-cta-btn">Odjavi se</button>
         </section>
+        {/* Tabovi za prikaz upita i rezervacija */}
         <section className="profile-section profile-box">
           <div className="profile-tabs">
             <button
@@ -77,6 +89,7 @@ function Profil() {
               Vaše rezervacije
             </button>
           </div>
+          {/* Prikaz korisničkih upita */}
           {tab === 'upiti' && (
             <>
               {upiti.length > 0 ? (
@@ -97,6 +110,7 @@ function Profil() {
               )}
             </>
           )}
+          {/* Prikaz korisničkih rezervacija */}
           {tab === 'rezervacije' && (
             <>
               {rezervacije.length > 0 ? (

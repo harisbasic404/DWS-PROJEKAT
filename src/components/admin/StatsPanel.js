@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 function StatsPanel() {
+  // Stanje za sve statistike (broj korisnika, rezervacija, poruka, automobila, usluga)
   const [stats, setStats] = useState({
     users: 0, rezervacije: 0, poruke: 0, automobili: 0, usluge: 0
   });
 
+  // Dohvatanje svih statistika sa servera pri prvom renderu
   useEffect(() => {
     Promise.all([
       fetch('http://localhost:3001/users').then(r => r.json()),
@@ -23,6 +25,7 @@ function StatsPanel() {
     });
   }, []);
 
+  // Prikaz tabele sa statistikom
   return (
     <div className="stats-table-wrapper">
       <h2>Statistika</h2>

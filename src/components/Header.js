@@ -5,10 +5,11 @@ import '../styles/Header.css';
 import { AuthContext } from "../AuthContext";
 
 function Header() {
+  // Dohvatanje korisnika iz AuthContext-a i stanje za mobilni meni
   const { user } = useContext(AuthContext);
-  const [menuOpen, setMenuOpen] = useState(false); // Dodaj state
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Tabovi za sve korisnike
+  // Definisanje osnovnih linkova za sve korisnike
   const commonLinks = [
     { to: "/", label: "Početna" },
     { to: "/about", label: "O nama" },
@@ -18,31 +19,32 @@ function Header() {
     { to: "/contact", label: "Kontakt" },
   ];
 
-  // Tabovi za različite statuse
+  // Prilagođavanje navigacije prema statusu korisnika
   let navLinks = [];
   if (!user) {
     // Nije ulogovan
     navLinks = [...commonLinks, { to: "/login", label: "Prijava" }];
   } else if (user.role === "admin") {
-    // Admin
+    // Admin korisnik
     navLinks = [
       ...commonLinks,
       { to: "/profil", label: "Profil" },
       { to: "/admin", label: "Admin dashboard" },
     ];
   } else {
-    // Gost (ulogovan, ali nije admin)
+    // Ulogovan korisnik (gost)
     navLinks = [...commonLinks, { to: "/profil", label: "Profil" }];
   }
 
   return (
     <header className="header-main">
       <nav className="header-nav">
+        {/* Logo i naziv firme */}
         <div className="logo-title">
           <img src={logo} alt="Logo" className="header-logo" />
           <span className="logo-text">Budući Klasici</span>
         </div>
-        {/* Overlay za zatvaranje menija */}
+        {/* Overlay za zatvaranje menija na mobilnim uređajima */}
         {menuOpen && (
           <div
             className="nav-overlay"
@@ -50,7 +52,7 @@ function Header() {
             tabIndex={-1}
           />
         )}
-        {/* Burger dugme */}
+        {/* Burger dugme za otvaranje/zatvaranje menija na mobilnim uređajima */}
         <div
           className={`burger${menuOpen ? " open" : ""}`}
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -62,7 +64,7 @@ function Header() {
           <span />
           <span />
         </div>
-        {/* Navigacija */}
+        {/* Navigaciona lista sa linkovima */}
         <ul className={`nav-list${menuOpen ? " open" : ""}`}>
           {navLinks.map((link) => (
             <li key={link.to}>

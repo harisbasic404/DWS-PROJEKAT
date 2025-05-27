@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react';
 
 function ReservationsManager() {
+  // Stanje za sve rezervacije
   const [rezervacije, setRezervacije] = useState([]);
 
+  // Dohvatanje svih rezervacija sa servera
   const fetchRezervacije = () => {
     fetch("http://localhost:3001/rezervacije")
       .then(res => res.json())
       .then(data => setRezervacije(data));
   };
 
+  // Učitavanje rezervacija pri prvom renderu
   useEffect(fetchRezervacije, []);
 
+  // Brisanje rezervacije po ID-u
   const handleDelete = async (id) => {
     await fetch(`http://localhost:3001/rezervacije/${id}`, { method: "DELETE" });
     fetchRezervacije();
   };
 
+  // Definicija atributa za prikaz u tabeli
   const atributi = [
     { label: "Korisnik", key: "korisnik" },
     { label: "Ime", key: "ime" },
@@ -32,6 +37,7 @@ function ReservationsManager() {
   return (
     <div>
       <h3>Rezervacije</h3>
+      {/* Tabela sa svim rezervacijama i opcijom brisanja */}
       <div className="admin-table-wrapper">
         <table className="admin-table" style={{ minWidth: 1200 }}>
           <tbody>

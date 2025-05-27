@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from 'react';
 
 function UsersManager() {
+  // Stanja za listu korisnika i formu za dodavanje novog korisnika
   const [users, setUsers] = useState([]);
   const [form, setForm] = useState({ username: '', ime: '', prezime: '', email: '', telefon: '', password: '', role: 'guest' });
 
+  // Dohvatanje svih korisnika sa servera (osim admina)
   const fetchUsers = () => {
     fetch("http://localhost:3001/users")
       .then(res => res.json())
       .then(data => setUsers(data.filter(u => u.username !== "admin")));
   };
 
+  // Prvo učitavanje korisnika
   useEffect(fetchUsers, []);
 
+  // Brisanje korisnika po ID-u
   const handleDeleteUser = async (id) => {
     if (!window.confirm("Obrisati korisnika?")) return;
     await fetch(`http://localhost:3001/users/${id}`, { method: "DELETE" });
     fetchUsers();
   };
 
+  // Ažuriranje forme pri promjeni inputa
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
+  // Dodavanje novog korisnika
   const handleAdd = async e => {
     e.preventDefault();
     const novi = { ...form, id: Math.random().toString(36).slice(2) };
@@ -32,6 +38,7 @@ function UsersManager() {
     setForm({ username: '', ime: '', prezime: '', email: '', telefon: '', password: '', role: 'guest' });
   };
 
+  // Definicija atributa za prikaz u tabeli
   const atributi = [
     { label: "Username", key: "username" },
     { label: "Ime", key: "ime" },
@@ -45,6 +52,7 @@ function UsersManager() {
   return (
     <div>
       <h3>Korisnici</h3>
+      {/* Forma za dodavanje novog korisnika */}
       <form onSubmit={handleAdd} style={{ marginBottom: 16 }}>
         <input name="username" placeholder="Username" value={form.username} onChange={handleChange} required />
         <input name="ime" placeholder="Ime" value={form.ime} onChange={handleChange} required />
@@ -58,6 +66,7 @@ function UsersManager() {
         </select>
         <button type="submit">Dodaj</button>
       </form>
+      {/* Tabela sa svim korisnicima i opcijom brisanja */}
       <div className="admin-table-wrapper">
         <table className="admin-table" style={{ minWidth: 1200 }}>
           <tbody>

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+// Komponenta za prikaz dugmeta za povratak na vrh stranice
 const ScrollToTop = () => {
+  // Stanje za vidljivost dugmeta
   const [visible, setVisible] = useState(false);
 
+  // Praćenje scroll-a i prikaz dugmeta kada korisnik skroluje dovoljno nisko
   useEffect(() => {
     const toggleVisibility = () => {
       setVisible(window.pageYOffset > 300);
@@ -11,10 +14,12 @@ const ScrollToTop = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
+  // Funkcija za glatko skrolanje na vrh stranice
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Prikaz dugmeta samo kada je vidljivo
   return (
     visible && (
       <button
