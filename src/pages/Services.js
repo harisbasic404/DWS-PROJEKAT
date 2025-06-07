@@ -43,7 +43,7 @@ function Services() {
       )}
       {/* Prikaz mehaničkih usluga */}
       <div className="services-section">
-        <h2>🔧 Mehaničke usluge</h2>
+        <h2> Mehaničke usluge</h2>
         <div className="services-grid">
           {mehanika.map((usluga) => (
             <div className="service-card" key={usluga.id}>
@@ -59,7 +59,7 @@ function Services() {
       </div>
       {/* Prikaz detailing usluga */}
       <div className="services-section">
-        <h2>✨ Detailing / Čišćenje auta</h2>
+        <h2> Detailing / Čišćenje auta</h2>
         <div className="services-grid">
           {detailing.map((usluga) => (
             <div className="service-card" key={usluga.id}>

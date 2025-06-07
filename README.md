@@ -117,10 +117,20 @@ Tekst: #2d1c1c
 
 ## Kratki opis doprinosa svakog člana tima
 
-> Ovdje dopunite imena i zadatke svakog člana tima, npr.:
-> - Borko: Backend (Express server, API rute)
-> - Penda: Frontend (dizajn, forme, responsive)
-> - Aleksa: Rezervacije, validacija, Google Maps
+- **Haris**
+  - Backend (Express server, API rute, validacija, rad sa bazom, autentikacija, zaštita ruta)
+  - Admin panel (CRUD za korisnike, rezervacije, poruke, automobile, usluge)
+  - Integracija frontenda i backenda, deployment, testiranje
+
+- **Kenan**
+  - Frontend (React komponente, stranice: Početna, O nama, Kontakt, Automobili, Usluge)
+  - Responsivan dizajn, stilizacija (CSS, MUI), Google Maps integracija
+  - Validacija formi, korisnički profil, prikaz rezervacija i poruka
+
+- **Hamza**
+  - Autentikacija i registracija korisnika (login, register, zaštita ruta)
+  - Komunikacija sa backendom (fetch, prikaz podataka)
+  - Testiranje funkcionalnosti, pisanje dokumentacije, priprema snimaka ekrana
 
 ---
 

@@ -3,30 +3,30 @@ import React, { useRef, useEffect, useState } from 'react';
 import '../styles/About.css';
 
 // Uvoz slika članova tima
-import borkoImg from '../assets/borko.png';
-import pendaImg from '../assets/penda.png';
-import aleksaImg from '../assets/aleksa.png';
+import harisImg from '../assets/haris.png';
+import kenanImg from '../assets/kenan.png';
+import hamzaImg from '../assets/hamza.png';
 
 // Definicija članova tima sa podacima i slikama
 const team = [
   {
     name: "Haris",
     role: "Vlasnik & ekspert za mehaniku",
-    img: borkoImg,
+    img: harisImg,
     desc: "Osnivač servisa i glavni mehaničar. Više od 15 godina iskustva u popravci i restauraciji automobila. Strastven, precizan i uvijek spreman pomoći svakom klijentu.",
     direction: "left"
   },
   {
     name: "Kenan",
     role: "Detailing & čišćenje",
-    img: pendaImg,
+    img: kenanImg,
     desc: "Zadužen za čišćenje i davanje sjaja automobilima. Svako vozilo nakon njegovih ruku izgleda kao iz salona. Perfekcionista u svakom detalju.",
     direction: "right"
   },
   {
     name: "Hamza",
     role: "Mehaničar",
-    img: aleksaImg,
+    img: hamzaImg,
     desc: "Specijalista za mehaniku i održavanje. Pouzdan, temeljit i uvijek spreman da pronađe rješenje za svaki tehnički izazov.",
     direction: "left"
   }
