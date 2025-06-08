@@ -52,8 +52,8 @@ function ServicesManager() {
           style={{ minWidth: 120 }}
         >
           <option value="">Odaberi kategoriju</option>
-          <option value="mehanika">Mehanika</option>
-          <option value="detailing">Detailing</option>
+          <option value="Mehaničke usluge">Mehaničke usluge</option>
+          <option value="Detailing">Detailing</option>
         </select>
         <input name="opis" placeholder="Opis" value={form.opis} onChange={handleChange} required />
         <button type="submit">Dodaj</button>
