@@ -29,6 +29,7 @@ Aplikacija omogućava korisnicima da rezervišu termin za servisiranje vozila, p
 ├── 📁 public
 │   └── 📁 assets
 │   └── index.html
+├── 📁 screenshots
 ├── 📁 src
 │   ├── 📁 assets
 │   ├── 📁 components
@@ -179,7 +180,25 @@ npm start
 
 ## Snimci ekrana radne aplikacije
 
-> Ovdje ubacite slike ekrana najvažnijih stranica:  
+<p align="center">
+  <img src="screenshots/r1.png" alt="Početna stranica" width="700"/>
+</p>
+<p align="center">
+  <img src="screenshots/r6.png" alt="Prijava/registracija" width="700"/>
+</p>
+<p align="center">
+  <img src="screenshots/kontakt.png" alt="Kontakt forma" width="700"/>
+</p>
+<p align="center">
+  <img src="screenshots/r4.png" alt="Rezervacija termina" width="700"/>
+</p>
+<p align="center">
+  <img src="screenshots/profil.png" alt="Profil korisnika" width="700"/>
+</p>
+<p align="center">
+  <img src="screenshots/r5.png" alt="Admin panel" width="700"/>
+</p>
+
 > - Početna stranica  
 > - Prijava/registracija  
 > - Kontakt forma  
