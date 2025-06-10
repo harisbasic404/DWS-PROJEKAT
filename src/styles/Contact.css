@@ -1,5 +1,10 @@
 .contact-page-container {
-  background: var(--background-color, #fff8f0);
+  /* Ukloni background: var(--background-color, #fff8f0); */
+  background:
+    linear-gradient(120deg, #fff8f0 0%, #ffe6a0 100%),
+    url("data:image/svg+xml;utf8,<svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='20' cy='20' r='2' fill='%23ffd70033'/></svg>");
+  background-blend-mode: overlay;
+  background-size: cover, 80px 80px;
   min-height: calc(100vh - 120px); /* prilagodi prema visini headera+footera */
   display: flex;
   justify-content: center;
