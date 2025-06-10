@@ -24,7 +24,7 @@ function LoginForm() {
     }
 
     // Provjeri da li je email ili username
-    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInput);
+    const isEmail = /^.+@.+\..+$/.test(userInput);
 
     try {
       const res = await fetch('http://localhost:3001/login', {

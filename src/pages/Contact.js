@@ -54,7 +54,7 @@ function Contact() {
     }
 
     // Validacija emaila
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^.+@.+\..+$/;
     if (!emailRegex.test(email)) {
       alert("Unesite ispravan email.");
       return;

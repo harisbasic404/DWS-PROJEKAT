@@ -43,6 +43,13 @@ function RegisterForm({ setToast, onSuccess }) {
       return;
     }
 
+    // Validacija emaila
+    const emailRegex = /^.+@.+\..+$/;
+    if (!emailRegex.test(email)) {
+      setPoruka('Unesite ispravan email.');
+      return;
+    }
+
     // Provjera jedinstvenosti username-a
     try {
       const resUser = await fetch(`http://localhost:3001/users?username=${encodeURIComponent(username)}`);

@@ -29,6 +29,15 @@
       "password": "Haris1234",
       "role": "guest",
       "id": "y0mlk25o4z"
+    },
+    {
+      "username": "admin1",
+      "ime": "adnan",
+      "prezime": "jasar",
+      "email": "admin1@gmail.com",
+      "password": "Admin1234",
+      "telefon": "38761123456",
+      "role": "guest"
     }
   ],
   "rezervacije": [
@@ -51,6 +60,46 @@
       "vrijeme": "13:00",
       "ukupna_cijena": 70,
       "id": "c0memfn2rwp"
+    },
+    {
+      "korisnik": "admin1",
+      "ime": "adnan",
+      "prezime": "jasar",
+      "email": "admin1@gmail.com",
+      "telefon": "38761123456",
+      "odabraneUsluge": [
+        {
+          "id": 1,
+          "kategorija": "Mehaničke usluge",
+          "naziv": "Mali servis",
+          "opis": "Zamjena ulja, uljnog filtera i osnovna provjera stanja vozila.",
+          "cijena": 100
+        }
+      ],
+      "datum": "2025-06-10",
+      "vrijeme": "08:00",
+      "ukupna_cijena": 100,
+      "id": "4n0r0q71btq"
+    },
+    {
+      "korisnik": "admin1",
+      "ime": "adnan",
+      "prezime": "jasar",
+      "email": "admin1@gmail.com",
+      "telefon": "38761123456",
+      "odabraneUsluge": [
+        {
+          "id": 8,
+          "kategorija": "Detailing",
+          "naziv": "Vanjsko pranje",
+          "opis": "Temeljno pranje eksterijera i felgi.",
+          "cijena": 50
+        }
+      ],
+      "datum": "2025-06-10",
+      "vrijeme": "09:00",
+      "ukupna_cijena": 50,
+      "id": "ihuarvet6t"
     }
   ],
   "poruke": [
@@ -63,6 +112,16 @@
       "poruka": "test\n",
       "datum": "2025-05-15T18:17:20.379Z",
       "id": "mapoz6rj"
+    },
+    {
+      "ime": "adnan",
+      "prezime": "jasar",
+      "email": "admin1@gmail.ba",
+      "telefon": "38761123456",
+      "korisnik": "admin1",
+      "poruka": "fqafasxf",
+      "datum": "2025-06-10T07:56:42.061Z",
+      "id": "mbq896tu"
     }
   ],
   "servisneUsluge": [
