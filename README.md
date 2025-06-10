@@ -12,7 +12,7 @@ Aplikacija omogućava korisnicima da rezervišu termin za servisiranje vozila, p
 
 ## Tehnologije korištene u radu
 
-- React (React Router, React Hooks)
+- React (React Router)
 - Material UI (MUI)
 - Express (Node.js backend)
 - CSS
