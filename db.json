@@ -21,16 +21,6 @@
       "telefon": "+38762123456"
     },
     {
-      "username": "harisbasic404",
-      "ime": "skibidi",
-      "prezime": "toilet",
-      "email": "haris@gmail.com",
-      "telefon": "0644468969",
-      "password": "Haris1234",
-      "role": "guest",
-      "id": "y0mlk25o4z"
-    },
-    {
       "username": "admin1",
       "ime": "adnan",
       "prezime": "jasar",
@@ -100,6 +90,26 @@
       "vrijeme": "09:00",
       "ukupna_cijena": 50,
       "id": "ihuarvet6t"
+    },
+    {
+      "korisnik": "gost",
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "odabraneUsluge": [
+        {
+          "id": 1,
+          "kategorija": "Mehaničke usluge",
+          "naziv": "Mali servis",
+          "opis": "Zamjena ulja, uljnog filtera i osnovna provjera stanja vozila.",
+          "cijena": 100
+        }
+      ],
+      "datum": "2025-06-10",
+      "vrijeme": "10:00",
+      "ukupna_cijena": 100,
+      "id": "rcotdyk6eof"
     }
   ],
   "poruke": [
@@ -122,6 +132,16 @@
       "poruka": "fqafasxf",
       "datum": "2025-06-10T07:56:42.061Z",
       "id": "mbq896tu"
+    },
+    {
+      "ime": "Gost",
+      "prezime": "Gostović",
+      "email": "gost@gmail.com",
+      "telefon": "+38762123456",
+      "korisnik": "gost",
+      "poruka": "jesul pragovi zdravi",
+      "datum": "2025-06-10T12:37:02.554Z",
+      "id": "mbqi9pn6"
     }
   ],
   "servisneUsluge": [
